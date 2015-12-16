@@ -25,6 +25,12 @@ public class FootbookDaoImpl implements FootbookDao {
 		return j.getIdJoueur();
 	}
 
+	@Override
+	public void modifierJoueur(Joueur j) {
+		// TODO Auto-generated method stub
+		em.merge(j);
+	}
+
 	/*@Override
 	public List<Joueur> listJoueurs() {
 		// TODO Auto-generated method stub
@@ -70,6 +76,12 @@ public class FootbookDaoImpl implements FootbookDao {
 		User u = em.find(User.class, userID);
 		u.getRoles().add(r);
 		em.persist(r);
+	}
+
+	@Override
+	public void modifierUser(User u) {
+		// TODO Auto-generated method stub
+		em.merge(u);
 	}
 
 }

@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.footbook.app.dao.FootbookDao;
-import com.footbook.app.entities.Joueur;
+import com.footbook.app.entities.Role;
 @Transactional
-public class JoueurMetierImpl implements JoueurMetier {
+public class RoleMetierImpl implements RoleMetier {
 
 	@Autowired
 	private FootbookDao fbDao;
@@ -17,16 +17,11 @@ public class JoueurMetierImpl implements JoueurMetier {
 	public void setFbDao(FootbookDao fbDao) {
 		this.fbDao = fbDao;
 	}
+	
 	@Override
-	public Long ajouterJoueur(Joueur j) {
+	public void attribuerRole(Role r, Long userID) {
 		// TODO Auto-generated method stub
-		fbDao.ajouterJoueur(j);
-		return j.getIdJoueur();
-	}
-	@Override
-	public void modifierJoueur(Joueur j) {
-		// TODO Auto-generated method stub
-		fbDao.modifierJoueur(j);
+		fbDao.attribuerRole(r, userID);
 	}
 
 }
