@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:8889/table_footbook"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	<bean id="persistenceUnitManager" 
+		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+		<property name="defaultDataSource" ref="datasource"/>
+		<property name="persistenceXmlLocations">
+			<list>
+				<value>classpath*:META-INF/persistence.xml</value>
+			</list>
+		</property>	
+	</bean>
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitManager" ref="persistenceUnitManager"/>
+		<property name="persistenceUnitName" value="UP_FOOTBOOK"/>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+	
+	<tx:annotation-driven/>
+	<context:annotation-config></context:annotation-config>
+	
+	<bean id="dao" class="com.footbook.app.dao.FootbookDaoImpl"></bean>
+	<bean id="metier" class="com.footbook.app.metier.JoueurMetierImpl">
+		<property name="fbDao" ref="dao"></property>
+	</bean>
+	
+	<security:http>
+		<!-- <security:intercept-url pattern="/profil/**" access="ROLE_JOUEUR"/> -->
+		<security:form-login login-page="/login" default-target-url="/index"
+		authentication-failure-url="/login"/>
+		<security:logout logout-success-url="/logout"/>
+	</security:http>
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:password-encoder hash="md5"></security:password-encoder>
+			<security:jdbc-user-service data-source-ref="datasource"
+			users-by-username-query="select user_name,password,actived from users where username =?"/>
+			
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>
