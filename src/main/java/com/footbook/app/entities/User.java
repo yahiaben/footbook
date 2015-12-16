@@ -41,7 +41,7 @@ public class User implements Serializable {
 		this.userName = userName;
 		this.password = password;
 		this.actived = actived;
-		this.joueur = joueur;
+		this.joueur = j;
 	}
 	public Long getIdUser() {
 		return idUser;
