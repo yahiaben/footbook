@@ -34,7 +34,7 @@
 				    <div class="control-group">
 				      <!-- Button -->
 				      <div class="controls">
-				        <button class="btn btn-success">Login</button>
+				        <button type="submit" class="btn btn-success">Login</button>
 				      </div>
 				    </div>
 				  </fieldset>
