@@ -47,6 +47,7 @@ public class TestJPA {
 			//roleMetier.attribuerRole(r, u.getIdUser());
 			userMetier.ajouterUser(u);
 			u.setJoueur(j);
+			u.setActived(true);
 			Role r = new Role("ROLE_JOUEUR");
 			userMetier.modifierUser(u);
 			roleMetier.attribuerRole(r, u.getIdUser());
