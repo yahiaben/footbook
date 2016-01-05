@@ -412,7 +412,7 @@
 
     this.color = params.color;
     this.hoverColor = params.hoverColor;
-    this.setBackgroundColor(params.backgroundColor);
+    //this.setBackgroundColor(params.backgroundColor);
 
     this.width = params.container.width();
     this.height = params.container.height();

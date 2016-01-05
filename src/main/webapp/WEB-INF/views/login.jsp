@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -88,6 +90,60 @@
 		</div>
 	</div>
   </div>
+ </div>
+ </div> 
+ <div id="formJoueur">
+ 	<f:form modelAttribute="joueur" action="saveJoueur" method="post" enctype="multipart/form-data"/>
+ 	<table>
+ 		<tr>
+ 			<td>Pseudo</td>
+ 			<td><f:input path="pseudo"/></td>
+ 			<td><f:errors path="pseudo" cssClass="errors"></f:errors></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Email</td>
+ 			<td><f:input path="emailjoueur"/></td>
+ 			<td><f:errors path="emailjoueur" cssClass="errors"></f:errors></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Description</td>
+ 			<td><f:textarea path="description"/></td>
+ 			<td><f:errors path="description" cssClass="errors"></f:errors></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Niveaux Joués</td>
+ 			<td><f:checkbox path="niveaux" value="PH"/></td>
+ 			<td><f:checkbox path="niveaux" value="PHR"/></td>
+ 			<td><f:checkbox path="niveaux" value="DH"/></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Sexe</td>
+ 			<td><f:checkbox path="sexe" value="M"/></td>
+ 			<td><f:checkbox path="sexe" value="F"/></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Photo</td>
+ 			<td><input type="file" name="photoJoueur"/></td>
+ 			<td></td>
+ 		</tr>
+ 		<tr>
+ 			<td><input type="submit" value="Save"/></td>
+ 		</tr>
+ 	</table>
+ </div>
+ <div id="">
+ 	<table>
+ 		<tr>
+ 			<th>Pseudo Joueur</th><th>description</th><th>Photo</th>
+ 		</tr>
+ 		<c:forEach items="${joueurs}" var="joueur">
+ 			<tr>
+ 				<td>${joueur.pseudojoueur}</td>
+ 				<td>${joueur.description}</td>
+ 				<td></td>
+ 			</tr>
+ 		</c:forEach>
+ 	</table>
  </div>
 	<script type="text/javascript" src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

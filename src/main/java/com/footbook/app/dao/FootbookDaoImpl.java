@@ -31,14 +31,14 @@ public class FootbookDaoImpl implements FootbookDao {
 		em.merge(j);
 	}
 
-	/*@Override
+	@Override
 	public List<Joueur> listJoueurs() {
 		// TODO Auto-generated method stub
 		Query req = em.createQuery("select * from joueurs j");
 		return req.getResultList();
 	}
 
-	@Override
+	/*@Override
 	public Joueur getJoueur(Long idJoueur) {
 		// TODO Auto-generated method stub
 		return em.find(Joueur.class, idJoueur);

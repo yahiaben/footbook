@@ -10,8 +10,8 @@ import com.footbook.app.entities.User;
 public interface FootbookDao {
 	public Long ajouterJoueur(Joueur j);
 	public void modifierJoueur(Joueur j);
-	/*public List<Joueur> listJoueurs();
-	public Joueur getJoueur(Long idJoueur);
+	public List<Joueur> listJoueurs();
+	/*public Joueur getJoueur(Long idJoueur);
 	public void supprimerJoueur(Long idJoueur);
 	
 	

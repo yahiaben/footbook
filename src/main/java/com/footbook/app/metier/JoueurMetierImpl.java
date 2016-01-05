@@ -1,5 +1,7 @@
 package com.footbook.app.metier;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +29,11 @@ public class JoueurMetierImpl implements JoueurMetier {
 	public void modifierJoueur(Joueur j) {
 		// TODO Auto-generated method stub
 		fbDao.modifierJoueur(j);
+	}
+	@Override
+	public List<Joueur> listJoueurs() {
+		// TODO Auto-generated method stub
+		return fbDao.listJoueurs();
 	}
 
 }
