@@ -118,4 +118,13 @@ public class Joueur implements Serializable {
 	public void setNomPhoto(String nomPhoto) {
 		this.nomPhoto = nomPhoto;
 	}
+
+	public Sexe getSexeJoueur() {
+		return sexeJoueur;
+	}
+
+	public void setSexeJoueur(Sexe sexeJoueur) {
+		this.sexeJoueur = sexeJoueur;
+	}
+	
 }

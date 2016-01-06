@@ -93,7 +93,7 @@
  </div>
  </div> 
  <div id="formJoueur">
- 	<f:form modelAttribute="joueur" action="saveJoueur" method="post" enctype="multipart/form-data"/>
+ 	<f:form modelAttribute="joueur" action="saveJoueur" method="post">
  	<table>
  		<tr>
  			<td>Pseudo</td>
@@ -102,8 +102,8 @@
  		</tr>
  		<tr>
  			<td>Email</td>
- 			<td><f:input path="emailjoueur"/></td>
- 			<td><f:errors path="emailjoueur" cssClass="errors"></f:errors></td>
+ 			<td><f:input path="email"/></td>
+ 			<td><f:errors path="email" cssClass="errors"></f:errors></td>
  		</tr>
  		<tr>
  			<td>Description</td>
@@ -112,24 +112,25 @@
  		</tr>
  		<tr>
  			<td>Niveaux Joués</td>
- 			<td><f:checkbox path="niveaux" value="PH"/></td>
- 			<td><f:checkbox path="niveaux" value="PHR"/></td>
- 			<td><f:checkbox path="niveaux" value="DH"/></td>
+ 			<td><f:checkbox path="mesChampionnats" value="PH"/>PH</td>
+ 			<td><f:checkbox path="mesChampionnats" value="PHR"/>PHR</td>
+ 			<td><f:checkbox path="mesChampionnats" value="DH"/>DH</td>
  		</tr>
  		<tr>
  			<td>Sexe</td>
- 			<td><f:checkbox path="sexe" value="M"/></td>
- 			<td><f:checkbox path="sexe" value="F"/></td>
+ 			<td><f:checkbox path="sexeJoueur" value="MASCULIN"/>MASCULIN</td>
+ 			<td><f:checkbox path="sexeJoueur" value="FEMININ"/>FEMININ</td>
  		</tr>
  		<tr>
  			<td>Photo</td>
- 			<td><input type="file" name="photoJoueur"/></td>
+ 			<td><input type="file" name="photo"/></td>
  			<td></td>
  		</tr>
  		<tr>
  			<td><input type="submit" value="Save"/></td>
  		</tr>
  	</table>
+ 	</f:form>
  </div>
  <div id="">
  	<table>
@@ -138,13 +139,14 @@
  		</tr>
  		<c:forEach items="${joueurs}" var="joueur">
  			<tr>
- 				<td>${joueur.pseudojoueur}</td>
+ 				<td>${joueur.pseudo}</td>
  				<td>${joueur.description}</td>
  				<td></td>
  			</tr>
  		</c:forEach>
  	</table>
  </div>
+ 
 	<script type="text/javascript" src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

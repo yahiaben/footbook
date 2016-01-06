@@ -34,7 +34,7 @@ public class FootbookDaoImpl implements FootbookDao {
 	@Override
 	public List<Joueur> listJoueurs() {
 		// TODO Auto-generated method stub
-		Query req = em.createQuery("select * from joueurs j");
+		Query req = em.createNativeQuery("select * from joueurs j",Joueur.class);
 		return req.getResultList();
 	}
 
