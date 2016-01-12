@@ -29,7 +29,12 @@ public class Joueur implements Serializable {
 	private Long idJoueur;
 	@NotEmpty
 	@Size(min=4, max=20)
-	private String pseudo;
+	private String nom;
+	
+	@NotEmpty
+	@Size(min=4, max=20)
+	private String prenom;
+	
 	@NotEmpty
 	@Size(min=10)
 	private String description;
@@ -55,9 +60,10 @@ public class Joueur implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Joueur(String pseudo, String description, String email, byte[] photo, String nomPhoto,Collection<Championnat> mesChampionnats, Sexe sexeJoueur) {
+	public Joueur(String nom,String prenom, String description, String email, byte[] photo, String nomPhoto,Collection<Championnat> mesChampionnats, Sexe sexeJoueur) {
 		super();
-		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
 		this.description = description;
 		this.email = email;
 		this.photo = photo;
@@ -88,12 +94,7 @@ public class Joueur implements Serializable {
 	public void setIdJoueur(Long idJoueur) {
 		this.idJoueur = idJoueur;
 	}
-	public String getPseudo() {
-		return pseudo;
-	}
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -125,6 +126,22 @@ public class Joueur implements Serializable {
 
 	public void setSexeJoueur(Sexe sexeJoueur) {
 		this.sexeJoueur = sexeJoueur;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	
 }

@@ -93,17 +93,27 @@
  </div>
  </div> 
  <div id="formJoueur">
- 	<f:form modelAttribute="joueur" action="saveJoueur" method="post">
+ 	<f:form modelAttribute="inscriptionDto" action="saveJoueur" method="post">
  	<table>
  		<tr>
- 			<td>Pseudo</td>
- 			<td><f:input path="pseudo"/></td>
- 			<td><f:errors path="pseudo" cssClass="errors"></f:errors></td>
+ 			<td>Nom</td>
+ 			<td><f:input path="nom"/></td>
+ 			<td><f:errors path="nom" cssClass="errors"></f:errors></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Prenom</td>
+ 			<td><f:input path="prenom"/></td>
+ 			<td><f:errors path="prenom" cssClass="errors"></f:errors></td>
  		</tr>
  		<tr>
  			<td>Email</td>
  			<td><f:input path="email"/></td>
  			<td><f:errors path="email" cssClass="errors"></f:errors></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Password</td>
+ 			<td><f:input type="password" path="password"/></td>
+ 			<td><f:errors path="password" cssClass="errors"></f:errors></td>
  		</tr>
  		<tr>
  			<td>Description</td>
@@ -139,7 +149,7 @@
  		</tr>
  		<c:forEach items="${joueurs}" var="joueur">
  			<tr>
- 				<td>${joueur.pseudo}</td>
+ 				<td>${joueur.nom}</td>
  				<td>${joueur.description}</td>
  				<td></td>
  			</tr>

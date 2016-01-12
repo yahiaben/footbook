@@ -26,7 +26,8 @@ public class TestJPA {
 				new ClassPathXmlApplicationContext(new String[]{"applicationContext.xml"});
 			
 			JoueurMetier joueurMetier = (JoueurMetier) context.getBean("metier");
-			String pseudo = "yahia";
+			String nom = "benali";
+			String prenom = "yahia";
 			String descritpion = "Salut ayant jouer en dh je recherche au minimum un club de phr";
 			String email = "y@hotmail.fr";
 			List<Championnat> mesChampionnats = new ArrayList();
@@ -34,17 +35,13 @@ public class TestJPA {
 			mesChampionnats.add(Championnat.PHR);
 			
 			
-			Joueur j = new Joueur(pseudo, descritpion, email, null, "maPhoto",mesChampionnats, Sexe.MASCULIN );
+			Joueur j = new Joueur(nom,prenom, descritpion, email, null, "maPhoto",mesChampionnats, Sexe.MASCULIN );
 			
 			UserMetier userMetier = (UserMetier) context.getBean("UserMetier");
 			List<Role> rList = new ArrayList();
 			RoleMetier roleMetier = (RoleMetier) context.getBean("RoleMetier");
-			User u = new User("yahia", "yahia", false);
-			//j.setUser(u);
+			User u = new User("y.ro@hotmail.fr", "yahia", true);
 			joueurMetier.ajouterJoueur(j);
-			//u.setRoles(rList);
-			//u.getRoles().add(r);
-			//roleMetier.attribuerRole(r, u.getIdUser());
 			userMetier.ajouterUser(u);
 			u.setJoueur(j);
 			u.setActived(true);
