@@ -6,6 +6,7 @@ import com.footbook.app.entities.Championnat;
 import com.footbook.app.entities.Joueur;
 import com.footbook.app.entities.Role;
 import com.footbook.app.entities.User;
+import com.footbook.app.entities.Ville;
 
 public interface FootbookDao {
 	public Long ajouterJoueur(Joueur j);
@@ -20,5 +21,8 @@ public interface FootbookDao {
 	public void ajouterUser(User u);
 	public void modifierUser(User u);
 	public void attribuerRole(Role r, Long userID);
+	
+	public List<Ville> listVilles();
+	public List<Ville> searchVilles(String ville);
 	
 }

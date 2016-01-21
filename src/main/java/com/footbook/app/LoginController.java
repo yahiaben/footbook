@@ -18,6 +18,7 @@ import com.footbook.app.metier.RoleMetier;
 import com.footbook.app.metier.RoleMetierImpl;
 import com.footbook.app.metier.UserMetier;
 import com.footbook.app.metier.UserMetierImpl;
+import com.footbook.app.metier.VilleMetier;
 
 @Controller
 public class LoginController {
@@ -30,11 +31,22 @@ public class LoginController {
 	@Autowired
 	private UserMetier um;
 	
+	@Autowired
+	private VilleMetier vm;
+	
 	@RequestMapping("/login")
 	public String login(Model model){
 		model.addAttribute("inscriptionDto", new InscriptionDto());
 		model.addAttribute("joueurs", jm.listJoueurs());
+		model.addAttribute("villes", vm.listVilles());
+
 		return "login";
+	}
+	
+	@RequestMapping("/accueil")
+	public String boots(Model model){
+		model.addAttribute("inscriptionDto", new InscriptionDto());
+		return "boots";
 	}
 	
 	@RequestMapping("/saveJoueur")
@@ -55,7 +67,8 @@ public class LoginController {
 		model.addAttribute("joueurs", jm.listJoueurs());
 		return "login";
 	}
-
+	
+	
 	
 	
 }

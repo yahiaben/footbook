@@ -19,7 +19,7 @@ import com.footbook.app.metier.UserMetier;
 
 public class TestJPA {
 
-	@Test
+	/*@Test
 	public void test1() {
 		try{
 			ClassPathXmlApplicationContext context=
@@ -56,6 +56,6 @@ public class TestJPA {
 		catch (Exception e){
 			assertTrue(e.getMessage(),false);
 		}
-	}
+	}*/
 
 }

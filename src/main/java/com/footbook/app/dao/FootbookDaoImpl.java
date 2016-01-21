@@ -10,6 +10,7 @@ import com.footbook.app.entities.Championnat;
 import com.footbook.app.entities.Joueur;
 import com.footbook.app.entities.Role;
 import com.footbook.app.entities.User;
+import com.footbook.app.entities.Ville;
 
 public class FootbookDaoImpl implements FootbookDao {
 	
@@ -82,6 +83,20 @@ public class FootbookDaoImpl implements FootbookDao {
 	public void modifierUser(User u) {
 		// TODO Auto-generated method stub
 		em.merge(u);
+	}
+
+	@Override
+	public List<Ville> listVilles() {
+		// TODO Auto-generated method stub
+		Query req = em.createNativeQuery("select * from villes v", Ville.class);
+		return req.getResultList();
+	}
+	
+	@Override
+	public List<Ville> searchVilles(String ville) {
+		// TODO Auto-generated method stub
+		Query req = em.createNativeQuery("select * from villes v where ville_nom like ('"+ville+"%')", Ville.class);
+		return req.getResultList();
 	}
 
 }

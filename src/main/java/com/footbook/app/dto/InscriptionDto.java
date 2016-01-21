@@ -21,6 +21,8 @@ public class InscriptionDto {
     private String userName;
     
     private String password;
+    
+    private String ville;
 
 	public String getNom() {
 		return nom;
@@ -85,5 +87,14 @@ public class InscriptionDto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+	
     
 }

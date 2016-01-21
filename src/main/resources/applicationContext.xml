@@ -45,6 +45,9 @@
 	<bean id="RoleMetier" class="com.footbook.app.metier.RoleMetierImpl">
 		<property name="fbDao" ref="dao"></property>
 	</bean>
+	<bean id="VilleMetier" class="com.footbook.app.metier.VilleMetierImpl">
+		<property name="fbDao" ref="dao"></property>
+	</bean>
 	
 	<security:http auto-config="true" use-expressions="true">
 		<security:intercept-url pattern="/profil/**" access="hasRole('ROLE_JOUEUR')"/>
