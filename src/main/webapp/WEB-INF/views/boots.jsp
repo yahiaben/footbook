@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,6 +11,8 @@
 <link rel='stylesheet' href='webjars/bootstrap/3.3.6/css/bootstrap.min.css'>
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
 <!-- Custom CSS -->
+
+<script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
 <spring:url value="/resources/css/font-awesome.css" var="fontawesome" />
 <spring:url value="/resources/css/style1.css" var="style1" />
 <spring:url value="/resources/css/owl.carousel.css" var="owlcar" />
@@ -19,14 +22,24 @@
 <spring:url value="/resources/css/jqvmap.css" var="jqvmapcss" />
 <spring:url value="/resources/js/jquery.vmap.js" var="jqueryvmap" />
 <spring:url value="/resources/js/jquery.vmap.france.js" var="jqueryvmapfrance" />
+<spring:url value="/resources/select2/dist/css/select2.min.css" var="selectCss" />
+<spring:url value="/resources/select2/dist/js/select2.min.js" var="selectJs" />
+<link href="${selectCss}" rel="stylesheet" />
 <link href="${fontawesome}" rel="stylesheet" />
 <link href="${style1}" rel="stylesheet" />
 <link href="${owlcar}" rel="stylesheet" />
 <link href="${owlth}" rel="stylesheet" />
-<script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
+<script src="${selectJs}"></script>
 <link href="${jqvmapcss}" rel="stylesheet" />
 <script src="${jqueryvmap}"></script>
 <script src="${jqueryvmapfrance}"></script>
+<script type="text/javascript">
+  $('select').select2();
+  $(document).ready(function() {
+	  $(".js-example-basic-single").select2();
+	});
+</script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#francemap').vectorMap({
@@ -227,6 +240,18 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+ 											<div class="widget-header">
+                                   				<h3>Votre ville</h3>
+                                			</div>
+ 											<select path="ville" class="js-example-basic-single form-control" >
+												<c:forEach items="${villes}" var="ville">
+ 													<option value="${ville.ville_departement}">${ville.ville_nom}</option>
+ 												</c:forEach>
+											</select>
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group">
                                             <div class="checkbox">
                                                 <label class="string optional" for="terms">
                                                	 	<f:checkbox path="sexeJoueur" value="MASCULIN"/>Masculin
@@ -242,7 +267,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-block btn-custom">Sign Up</button>
+                                            <button class="btn btn-block btn-custom">S'inscrire</button>
                                         </div>
                                     </f:form>
                                 </div>

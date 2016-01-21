@@ -1,5 +1,8 @@
 package com.footbook.app;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,7 @@ import com.footbook.app.dto.InscriptionDto;
 import com.footbook.app.entities.Joueur;
 import com.footbook.app.entities.Role;
 import com.footbook.app.entities.User;
+import com.footbook.app.entities.Ville;
 import com.footbook.app.metier.JoueurMetier;
 import com.footbook.app.metier.JoueurMetierImpl;
 import com.footbook.app.metier.RoleMetier;
@@ -46,6 +50,12 @@ public class LoginController {
 	@RequestMapping("/accueil")
 	public String boots(Model model){
 		model.addAttribute("inscriptionDto", new InscriptionDto());
+		/*Ville v = new Ville("59","Lille");
+		Ville v2 = new Ville("59","Loos");
+		List<Ville> lv = new ArrayList();
+		lv.add(v);
+		lv.add(v2);*/
+		model.addAttribute("villes", vm.listVilles());
 		return "boots";
 	}
 	
