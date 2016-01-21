@@ -37,6 +37,7 @@
   $('select').select2();
   $(document).ready(function() {
 	  $(".js-example-basic-single").select2();
+	  $(".js-example-basic-multiple").select2();
 	});
 </script>
 
@@ -95,17 +96,17 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user"></i> <strong class="caret"></strong>&nbsp;</a>
                                 <div class="dropdown-menu dropdown-login" style="padding:15px;min-width:250px">
-                                    <form>                       
+                                    <form action="j_spring_security_check" method="POST">                       
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
-                                                <input type="text" placeholder="Username or email" required="required" class="form-control input-login">                                            
+                                                <input type="text" name="j_username" placeholder="Username or email" required="required" class="form-control input-login">                                            
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
-                                                <input type="password" placeholder="Password" required="required" class="form-control input-login">                                            
+                                                <input type="password" name="j_password" placeholder="Password" required="required" class="form-control input-login">                                            
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -234,9 +235,13 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="checkbox">
-                                                <label class="string optional" for="terms">
+                                                <!--<label class="string optional" for="terms">
                                                	 	<f:checkbox path="mesChampionnats" value="DH"/>DH
-                                                </label>
+                                                </label>-->
+                                                <f:select path="mesChampionnats" class="js-example-basic-multiple form-control" multiple="multiple">
+  													<option value="DH">DH</option>
+  													<option value="PH">PH</option>
+												</f:select>
                                             </div>
                                         </div>
                                         <div class="form-group">

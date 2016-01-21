@@ -52,7 +52,7 @@
 	<security:http auto-config="true" use-expressions="true">
 		<security:intercept-url pattern="/profil/**" access="hasRole('ROLE_JOUEUR')"/>
 		<security:form-login 
-		login-page="/login" 
+		login-page="/accueil" 
 		default-target-url="/profil"
         username-parameter="j_username" 
         password-parameter="j_password"
