@@ -40,7 +40,6 @@
 	  $(".js-example-basic-multiple").select2();
 	});
 </script>
-
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#francemap').vectorMap({
@@ -160,7 +159,7 @@
                                 	<h2>Simplicé et efficacité : la map Footbook</h2>
                                 </div>
                                     <div class="shortcut">
-                                        <a href="category.html"><i class="fa shortcut-icon icon-blue"><div id="francemap" style="width: 500px; height: 500px;"></div></i></a>
+                                        <i class="fa shortcut-icon icon-blue"><div id="francemap" style="width: 500px; height: 500px;"></div></i>
                                         <a href="category.html"><h3>Selectionner une région</h3></a>
                                     </div>
                                 
