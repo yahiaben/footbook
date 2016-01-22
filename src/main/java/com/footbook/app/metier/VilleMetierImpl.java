@@ -24,10 +24,17 @@ public class VilleMetierImpl implements VilleMetier {
 		// TODO Auto-generated method stub
 		return fbDao.listVilles();
 	}
+	
 	@Override
 	public List<Ville> searchVilles(String ville) {
 		// TODO Auto-generated method stub
 		return fbDao.searchVilles(ville);
+	}
+	
+	@Override
+	public String departementDeLaVille(String ville) {
+		// TODO Auto-generated method stub
+		return fbDao.departementDeLaVille(ville);
 	}
 
 }

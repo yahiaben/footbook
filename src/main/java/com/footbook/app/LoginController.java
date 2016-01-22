@@ -61,9 +61,10 @@ public class LoginController {
 	
 	@RequestMapping("/saveJoueur")
 	public String saveJoueur(@ModelAttribute("inscriptionDto") InscriptionDto iDto,BindingResult bindingResult, Model model){
-		System.out.println(iDto.getNom() + "  " + iDto.getPrenom() + "  " + iDto.getDescription() + "  " + iDto.getEmail());
+		String dpt = vm.departementDeLaVille(iDto.getVille());
+		System.out.println(dpt + " departement " + iDto.getNom() + "  " + iDto.getPrenom() + "  " + iDto.getDescription() + "  " + iDto.getEmail());
 		
-		Joueur j = new Joueur(iDto.getNom(),iDto.getPrenom(),iDto.getDescription(),iDto.getEmail(),null,"PhotoDefaut",iDto.getMesChampionnats(),iDto.getSexeJoueur());
+		Joueur j = new Joueur(iDto.getNom(),iDto.getPrenom(),iDto.getDescription(),iDto.getEmail(),null,"PhotoDefaut",iDto.getMesChampionnats(),iDto.getSexeJoueur(),dpt,iDto.getVille());
 		User u = new User(iDto.getEmail(),iDto.getPassword(),true);
 		jm.ajouterJoueur(j);
 		um.ajouterUser(u);

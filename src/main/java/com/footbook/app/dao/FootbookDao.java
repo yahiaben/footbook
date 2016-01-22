@@ -24,5 +24,5 @@ public interface FootbookDao {
 	
 	public List<Ville> listVilles();
 	public List<Ville> searchVilles(String ville);
-	
+	public String departementDeLaVille(String ville);
 }

@@ -99,4 +99,14 @@ public class FootbookDaoImpl implements FootbookDao {
 		return req.getResultList();
 	}
 
+	@Override
+	public String departementDeLaVille(String ville) {
+		// TODO Auto-generated method stub
+		Query req = em.createNativeQuery("select ville_departement from villes v where ville_nom = :ville");
+		req.setParameter("ville", ville);
+		Object dep = req.getSingleResult();
+		String s = (String) dep;
+		return s;
+	}
+
 }

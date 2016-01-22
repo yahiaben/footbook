@@ -248,11 +248,11 @@
  											<div class="widget-header">
                                    				<h3>Votre ville</h3>
                                 			</div>
- 											<select path="ville" class="js-example-basic-single form-control" >
+ 											<f:select path="ville" class="js-example-basic-single form-control" >
 												<c:forEach items="${villes}" var="ville">
- 													<option value="${ville.ville_departement}">${ville.ville_nom}</option>
+ 													<option value="${ville.ville_nom}">${ville.ville_nom}</option>
  												</c:forEach>
-											</select>
+											</f:select>
                                         </div>
                                         
                                         
