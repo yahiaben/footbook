@@ -244,7 +244,7 @@
                             <div class="item-counter">
                                 <span class="item-icon"><i class="fa fa-database"></i></span>
                                 <div data-refresh-interval="100" data-speed="3000" data-to="7803" data-from="0" class="item-count">7803</div>
-                                <span class="item-info">Items</span>
+                                <span class="item-info">Inscrit Aujourd'hui</span>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -258,7 +258,7 @@
                             <div class="item-counter">
                                 <span class="item-icon"><i class="fa fa-map-marker"></i></span>
                                 <div data-refresh-interval="80" data-speed="5000" data-to="639" data-from="0" class="item-count">639</div>
-                                <span class="item-info">Locations</span>
+                                <span class="item-info">Clubs Partenaire</span>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -275,13 +275,13 @@
         <div class="container">
         <ul class="pull-left footer-menu">
             <li>
-                <a href="index.html"> Home </a>
-                <a href="about.html"> About us </a>
-                <a href="contact.html"> Contact us </a>
+                <a href="index.html"> Accueil </a>
+                <a href="about.html"> A propos de nous </a>
+                <a href="contact.html"> Contactez-nous </a>
             </li>
         </ul>
         <ul class="pull-right footer-menu">
-            <li> &copy; 2015 Dlapak </li>
+            <li> &copy; 2016 Footbook </li>
         </ul>
         </div>
     </div>
