@@ -160,51 +160,8 @@
                                 </div>
                                     <div class="shortcut">
                                         <i class="fa shortcut-icon icon-blue"><div id="francemap" style="width: 500px; height: 500px;"></div></i>
-                                        <a href="category.html"><h3>Selectionner une région</h3></a>
+                                        <h3>Selectionner une région</h3>
                                     </div>
-                                
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="section-header">
-                                        <h2>Featured</h2>
-                                    </div>
-                                    <div id="featured-products" class="owl-carousel owl-carousel-featured">
-                                        <div class="item">
-                                            <div class="item-ads-grid">
-                                                <div class="item-badge-grid featured-ads">
-                                                    <a href="#">Featured Ads</a>
-                                                </div>
-                                                <div class="item-img-grid">
-                                                    <img alt="" src="assets/img/products/product-1.jpg" class="img-responsive img-center">
-                                                </div>
-                                                <div class="item-title">
-                                                    <a href="detail.html"><h4>Lenovo A326 Black 4GB RAM</h4></a>
-                                                </div>
-                                                <div class="item-meta">
-                                                    <ul>
-                                                        <li class="item-date"><i class="fa fa-clock-o"></i> Today 10.35 am</li>
-                                                        <li class="item-cat"><i class="fa fa-bars"></i> <a href="category.html">Electronics</a> , <a href="category.html">Smartphone</a></li>
-                                                        <li class="item-location"><a href="category.html"><i class="fa fa-map-marker"></i> Manchester</a></li>
-                                                        <li class="item-type"><i class="fa fa-bookmark"></i> New</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="product-footer">
-                                                    <div class="item-price-grid pull-left">
-                                                        <h3>$ 100</h3>
-                                                        <span>Negotiable</span>
-                                                    </div>
-                                                    <div class="item-action-grid pull-right">
-                                                        <ul>
-                                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="Save Favorite" class="btn btn-default btn-sm"><i class="fa fa-heart"></i></a></li>
-                                                            <li><a href="detail.html" data-toggle="tooltip" data-placement="top" title="Show Details" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>   
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4">
@@ -276,30 +233,58 @@
                                     </f:form>
                                 </div>
                             </div>
-                            <div class="widget">
-                                <div class="widget-header">
-                                    <h3>Trends</h3>
-                                </div>
-                                <div class="widget-body">
-                                    <ul class="trends">
-                                        <li><a href="#">Smartphone &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                        <li><a href="#">Watch &amp; Jewelry &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                        <li><a href="#">Clothes &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                        <li><a href="#">Shoes &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                        <li><a href="#">Music &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                        <li><a href="#">Furniture &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                        <li><a href="#">Photography &nbsp;<span class="item-numbers">(242)</span></a></li>
-                                        <li><a href="#">Web Development &nbsp;<span class="item-numbers">(2,342)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="banner-widget">
-                                <img src="http://placehold.it/600x275" alt="banner" class="img-responsive">
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <div class="counter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="item-counter">
+                                <span class="item-icon"><i class="fa fa-database"></i></span>
+                                <div data-refresh-interval="100" data-speed="3000" data-to="7803" data-from="0" class="item-count">7803</div>
+                                <span class="item-info">Items</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-counter">
+                                <span class="item-icon"><i class="fa fa-user-plus"></i></span>
+                                <div data-refresh-interval="50" data-speed="5000" data-to="427" data-from="0" class="item-count">427</div>
+                                <span class="item-info">Sellers</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-counter">
+                                <span class="item-icon"><i class="fa fa-map-marker"></i></span>
+                                <div data-refresh-interval="80" data-speed="5000" data-to="639" data-from="0" class="item-count">639</div>
+                                <span class="item-info">Locations</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="item-counter">
+                                <span class="item-icon"><i class="fa fa-users"></i></span>
+                                <div data-refresh-interval="80" data-speed="5000" data-to="1548" data-from="0" class="item-count">1548</div>
+                                <span class="item-info">Joueurs Membre</span>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- / .counter -->
+    </div>
+    <div class="footer">
+        <div class="container">
+        <ul class="pull-left footer-menu">
+            <li>
+                <a href="index.html"> Home </a>
+                <a href="about.html"> About us </a>
+                <a href="contact.html"> Contact us </a>
+            </li>
+        </ul>
+        <ul class="pull-right footer-menu">
+            <li> &copy; 2015 Dlapak </li>
+        </ul>
+        </div>
+    </div>
 	</div>
 	
 	
