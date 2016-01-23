@@ -3,6 +3,8 @@ package com.footbook.app;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.footbook.app.dto.InscriptionDto;
 import com.footbook.app.entities.Joueur;
@@ -59,24 +62,29 @@ public class LoginController {
 		return "boots";
 	}
 	
-	@RequestMapping("/saveJoueur")
-	public String saveJoueur(@ModelAttribute("inscriptionDto") InscriptionDto iDto,BindingResult bindingResult, Model model){
+	@RequestMapping(value="/saveJoueur", method = RequestMethod.POST)
+	public String saveJoueur(@ModelAttribute("inscriptionDto") @Valid InscriptionDto iDto,BindingResult bindingResult, Model model){
 		String dpt = vm.departementDeLaVille(iDto.getVille());
 		System.out.println(dpt + " departement " + iDto.getNom() + "  " + iDto.getPrenom() + "  " + iDto.getDescription() + "  " + iDto.getEmail());
 		
-		Joueur j = new Joueur(iDto.getNom(),iDto.getPrenom(),iDto.getDescription(),iDto.getEmail(),null,"PhotoDefaut",iDto.getMesChampionnats(),iDto.getSexeJoueur(),dpt,iDto.getVille());
-		User u = new User(iDto.getEmail(),iDto.getPassword(),true);
-		jm.ajouterJoueur(j);
-		um.ajouterUser(u);
-		u.setJoueur(j);
-		um.modifierUser(u);
-		j.setUser(u);
-		jm.modifierJoueur(j);
-		Role r = new Role("ROLE_JOUEUR");
-		rm.attribuerRole(r, u.getIdUser());
-		//model.addAttribute("joueur", new Joueur());
-		model.addAttribute("joueurs", jm.listJoueurs());
-		return "login";
+		if (!bindingResult.hasErrors()) {
+			Joueur j = new Joueur(iDto.getNom(),iDto.getPrenom(),iDto.getDescription(),iDto.getEmail(),null,"PhotoDefaut",iDto.getMesChampionnats(),iDto.getSexeJoueur(),dpt,iDto.getVille());
+			User u = new User(iDto.getEmail(),iDto.getPassword(),true);
+			jm.ajouterJoueur(j);
+			um.ajouterUser(u);
+			u.setJoueur(j);
+			um.modifierUser(u);
+			j.setUser(u);
+			jm.modifierJoueur(j);
+			Role r = new Role("ROLE_JOUEUR");
+			rm.attribuerRole(r, u.getIdUser());
+			//model.addAttribute("joueur", new Joueur());
+			model.addAttribute("joueurs", jm.listJoueurs());
+			
+			return "login";
+		}
+			
+		return "boots";
 	}
 	
 	
