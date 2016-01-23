@@ -2,24 +2,40 @@ package com.footbook.app.dto;
 
 import java.util.Collection;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 import com.footbook.app.entities.Championnat;
 import com.footbook.app.entities.Sexe;
 
 public class InscriptionDto {
+	
+	@NotNull
+	@Size(min=1, max=25, message="Le nom doit être compris entre 1 et 25 caractéres")
 	private String nom;
     
+	@NotNull
+	@Size(min=1, max=25, message="Le prenom doit être compris entre 1 et 25 caractéres")
     private String prenom;
     
     private Sexe sexeJoueur;
     
+    @NotNull
+	@Size(min=1, max=250, message="La description doit être comprise entre 10 et 250 caractéres")
     private String description;
     
+    @NotNull
+    @Email(message="veuillez entrer un email valide !")
     private String email;
     
     private Collection<Championnat> mesChampionnats;
     
     private String userName;
     
+    @NotNull
+    @Size(min=8, max=15, message="Le mot de passe doit être compris entre 8 et 15 caractéres")
     private String password;
     
     private String ville;

@@ -78,48 +78,26 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a href="index.html" class="navbar-brand"><span class="logo"><i class=""></i> FootBook</span></a>
-                    </div>
-
+                    </div>	
+					
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="new-ads"><a href="account_create_post.html" class="btn btn-ads btn-block">Advertise</a></li>
-                            <li><a href="signup.html">Signup</a></li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="account_posts.html">My Ads</a></li>
-                                    <li><a href="account_create_post.html">Create Ads</a></li>
-                                    <li><a href="account_profile.html">My Profile</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user"></i> <strong class="caret"></strong>&nbsp;</a>
-                                <div class="dropdown-menu dropdown-login" style="padding:15px;min-width:250px">
-                                    <form action="j_spring_security_check" method="POST">                       
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
-                                                <input type="text" name="j_username" placeholder="Username or email" required="required" class="form-control input-login">                                            
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
-                                                <input type="password" name="j_password" placeholder="Password" required="required" class="form-control input-login">                                            
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="checkbox">
-                                                <label class="string optional" for="user_remember_me">
-                                                    <input type="checkbox" id="user_remember_me" style="">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <input type="submit" class="btn btn-custom btn-block" value="Sign In">
-                                        <a href="forgot_password.html" class="btn-block text-center">Forgot password?</a>
-                                    </form>                                    
-                                </div>
+			                   <form id="signin" class="navbar-form navbar-right" action="j_spring_security_check" method="POST">
+			                        <div class="input-group">
+			                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+			                            <input id="email" type="email" class="form-control" name="j_username" value="" placeholder="Email Address">                                        
+			                        </div>
+			
+			                        <div class="input-group">
+			                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+			                            <input id="password" type="password" class="form-control" name="j_password" value="" placeholder="Password">                                        
+			                        </div>
+			
+			                        <div class="form-group">
+                                            <button type="submit" class="btn btn-block btn-custom">Login</button>
+                                    </div>
+			                   </form>
                             </li>
 
                         </ul>
@@ -174,20 +152,36 @@
                                 </div>
                                 <div class="widget-body">
                                     <f:form modelAttribute="inscriptionDto" action="saveJoueur" method="post">
+                                       <div class="form-group">
+                                            <div class="checkbox">
+                                                <label class="string optional" for="terms">
+                                               	 	<f:radiobutton path="sexeJoueur" value="MASCULIN"/>  Mr
+                                                </label>
+                                                <label class="string optional" for="terms">
+                                               	 	<f:radiobutton path="sexeJoueur" value="FEMININ"/>  Mme
+                                                </label>
+                                                <f:errors path="sexeJoueur" />
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <f:input class="form-control input-lg" path="nom" placeholder="Nom"/>
+                                            <f:errors path="nom" />
                                         </div>
                                         <div class="form-group">
                                             <f:input class="form-control input-lg" path="prenom" placeholder="Prenom"/>
+                                            <f:errors path="prenom"/>
                                         </div>
                                         <div class="form-group">
                                             <f:input type="text" class="form-control input-lg" path="email" placeholder="Email"/>
+                                            <f:errors path="email" />
                                         </div>
                                         <div class="form-group">
                                             <f:input type="password" class="form-control input-lg" path="password" placeholder="Password"/>
+                                            <f:errors path="password" />
                                         </div>
                                         <div class="form-group">
                                             <f:textarea class="form-control input-lg" path="description" placeholder="Description"/>
+                                            <f:errors path="description" />
                                         </div>
                                         <div class="form-group">
                                             <div class="checkbox">
@@ -198,6 +192,7 @@
   													<option value="DH">DH</option>
   													<option value="PH">PH</option>
 												</f:select>
+												<f:errors path="mesChampionnats" />
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -209,16 +204,9 @@
  													<option value="${ville.ville_nom}">${ville.ville_nom}</option>
  												</c:forEach>
 											</f:select>
+											<f:errors path="ville" />
                                         </div>
                                         
-                                        
-                                        <div class="form-group">
-                                            <div class="checkbox">
-                                                <label class="string optional" for="terms">
-                                               	 	<f:checkbox path="sexeJoueur" value="MASCULIN"/>Masculin
-                                                </label>
-                                            </div>
-                                        </div>
                                         <div class="form-group">
                                             <div class="checkbox">
                                                 <label class="string optional" for="terms">
