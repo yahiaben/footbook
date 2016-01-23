@@ -1,18 +1,16 @@
 package com.footbook.app;
 
-import java.security.Principal;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ProfilController {
+public class CarteController {
+
 	
-	@RequestMapping("/profil")
-	public String login(Principal principal){
-		System.out.println(principal.getName() + "voici le name");
-		return "profil";
+	@RequestMapping("joueurs/{region}")
+	public String JoueursRegion(@PathVariable String region){
+		System.out.println("voila la region" + region);
+		return "joueursRegion";
 	}
-	
 }

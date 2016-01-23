@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccueilController {
 
 	
-	@RequestMapping("joueurs/{region}")
-	public String getJoueursRegion(@PathVariable String region){
-		System.out.println("voila la region" + region);
-		return "joueursRegion";
-	}
+	/*@RequestMapping("joueurs/{region}")
+	public String JoueursRegion(@PathVariable String region){
+		//System.out.println("voila la region" + region);
+		return "joueurs";
+	}*/
 }
