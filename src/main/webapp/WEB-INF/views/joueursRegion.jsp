@@ -2,13 +2,20 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<%@include file="headLiens.jsp" %>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
+	<div class="wrapper">
+		<%@include file="head.jsp" %>
+            <section class="main">
+                
+   	        </section>
+    	<%@include file="footer.jsp" %>
+    </div>
+	
+	
+	<%@include file="footerScripts.jsp" %>
 </body>
 </html>

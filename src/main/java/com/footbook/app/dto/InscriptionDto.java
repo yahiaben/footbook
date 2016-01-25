@@ -38,6 +38,7 @@ public class InscriptionDto {
     @Size(min=8, max=15, message="Le mot de passe doit être compris entre 8 et 15 caractéres")
     private String password;
     
+    @NotNull
     private String ville;
 
 	public String getNom() {
