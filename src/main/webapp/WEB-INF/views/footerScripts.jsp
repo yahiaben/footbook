@@ -1,4 +1,4 @@
-<script type="text/javascript" src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="${owlcarJS}"></script>
 	<script src="${jquCount}"></script>
 	<script type="text/javascript">

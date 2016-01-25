@@ -1,8 +1,10 @@
-<link rel='stylesheet' href='webjars/bootstrap/3.3.6/css/bootstrap.min.css'>
+<spring:url value="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" var="bootstrap" />
+<link href="${bootstrap}" rel="stylesheet" />
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
 <!-- Custom CSS -->
 
-<script type="text/javascript" src="webjars/jquery/2.1.4/jquery.min.js"></script>
+<spring:url value="/webjars/jquery/2.1.4/jquery.min.js" var="jquery" />
+<script type="text/javascript" src="${jquery}"></script>
 <spring:url value="/resources/css/font-awesome.css" var="fontawesome" />
 <spring:url value="/resources/css/style1.css" var="style1" />
 <spring:url value="/resources/css/owl.carousel.css" var="owlcar" />
