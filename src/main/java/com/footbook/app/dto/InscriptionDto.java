@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 
 import com.footbook.app.entities.Championnat;
+import com.footbook.app.entities.Poste;
 import com.footbook.app.entities.Sexe;
 
 public class InscriptionDto {
@@ -19,6 +20,16 @@ public class InscriptionDto {
 	@NotNull
 	@Size(min=1, max=25, message="Le prenom doit être compris entre 1 et 25 caractéres")
     private String prenom;
+	
+	public Collection<Poste> getMesPostes() {
+		return mesPostes;
+	}
+
+	public void setMesPostes(Collection<Poste> mesPostes) {
+		this.mesPostes = mesPostes;
+	}
+
+	private Collection<Poste> mesPostes;
     
     private Sexe sexeJoueur;
     

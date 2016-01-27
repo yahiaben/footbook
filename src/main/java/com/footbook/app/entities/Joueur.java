@@ -62,17 +62,18 @@ public class Joueur implements Serializable {
 	@ElementCollection
 	@Column(name = "poste", nullable = false)
 	@Enumerated(EnumType.STRING)
-	private Collection<Championnat> mesPostes;
+	private Collection<Poste> mesPostes;
 	
 	public Joueur() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Joueur(String nom,String prenom, String description, String email, byte[] photo, String nomPhoto,Collection<Championnat> mesChampionnats, Sexe sexeJoueur, String departement, String ville) {
+	public Joueur(String nom,String prenom, Collection<Poste> postes, String description, String email, byte[] photo, String nomPhoto,Collection<Championnat> mesChampionnats, Sexe sexeJoueur, String departement, String ville) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
+		this.mesPostes = postes;
 		this.description = description;
 		this.email = email;
 		this.photo = photo;
@@ -83,6 +84,14 @@ public class Joueur implements Serializable {
 		this.departement = departement;
 	}
 	
+	public Collection<Poste> getMesPostes() {
+		return mesPostes;
+	}
+
+	public void setMesPostes(Collection<Poste> mesPostes) {
+		this.mesPostes = mesPostes;
+	}
+
 	public User getUser() {
 		return user;
 	}

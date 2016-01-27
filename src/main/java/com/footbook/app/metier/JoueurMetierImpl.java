@@ -3,6 +3,9 @@ package com.footbook.app.metier;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.footbook.app.dao.FootbookDao;
@@ -35,5 +38,12 @@ public class JoueurMetierImpl implements JoueurMetier {
 		// TODO Auto-generated method stub
 		return fbDao.listJoueurs();
 	}
+
+	@Override
+	public List<Joueur> listJoueurs(String departement) {
+		// TODO Auto-generated method stub
+		return fbDao.listJoueurs(departement);
+	}
+
 
 }

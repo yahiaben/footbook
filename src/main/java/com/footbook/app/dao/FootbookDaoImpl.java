@@ -38,6 +38,15 @@ public class FootbookDaoImpl implements FootbookDao {
 		Query req = em.createNativeQuery("select * from joueurs j",Joueur.class);
 		return req.getResultList();
 	}
+	
+
+	@Override
+	public List<Joueur> listJoueurs(String departement) {
+		// TODO Auto-generated method stub
+		Query req = em.createNativeQuery("select * from joueurs j where departement = :dep",Joueur.class);
+		req.setParameter("dep", departement);
+		return req.getResultList();
+	}
 
 	/*@Override
 	public Joueur getJoueur(Long idJoueur) {
