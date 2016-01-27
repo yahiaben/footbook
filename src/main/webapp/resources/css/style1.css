@@ -887,7 +887,7 @@ h2.product-title{
   border-radius: 8px;
   text-align: center;
   padding: 0;
-  background-image:linear-gradient(white, rgb(88, 179, 37));
+   background-color: rgb(83,169,0);
   color: rgb(136, 172, 217);
 }
 
@@ -915,7 +915,7 @@ h2.product-title{
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: 5px solid rgba(0,0,30,0.8);
+  border: 5px solid white;
 }
 
 .header-bg{
