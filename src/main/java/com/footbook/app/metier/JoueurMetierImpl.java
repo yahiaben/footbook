@@ -38,6 +38,16 @@ public class JoueurMetierImpl implements JoueurMetier {
 		// TODO Auto-generated method stub
 		return fbDao.listJoueurs();
 	}
+	@Override
+	public Long getIDJoueurFromUser(String email) {
+		// TODO Auto-generated method stub
+		return fbDao.getIDJoueurFromUser(email);
+	}
+	@Override
+	public Joueur getJoueur(Long idJoueur) {
+		// TODO Auto-generated method stub
+		return fbDao.getJoueur(idJoueur);
+	}
 
 	@Override
 	public List<Joueur> listJoueurs(String departement) {

@@ -44,7 +44,7 @@ public class AccueilController {
 	public String uploadPicture(@RequestParam("file") final MultipartFile fileUpload, final Principal principal) {
 		if (!fileUpload.isEmpty()) {
 			final String[] ext = fileUpload.getOriginalFilename().split("\\.");
-			final File file = new File("/Users/scof/Sites/img/" + "yahia.jpg");
+			final File file = new File("/Users/yahia/Desktop/img-footbook/" + "yahia.jpg");
 			try {
 				FileUtils.copyInputStreamToFile(fileUpload.getInputStream(), file);
 			} catch (final IOException e) {

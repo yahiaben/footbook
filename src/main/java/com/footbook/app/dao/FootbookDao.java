@@ -15,8 +15,8 @@ public interface FootbookDao {
 	public Long ajouterJoueur(Joueur j);
 	public void modifierJoueur(Joueur j);
 	public List<Joueur> listJoueurs();
-	/*public Joueur getJoueur(Long idJoueur);
-	public void supprimerJoueur(Long idJoueur);
+	public Joueur getJoueur(Long idJoueur);
+	/*public void supprimerJoueur(Long idJoueur);
 	
 	
 	public Championnat getChampionnat(long idChampionnat);
@@ -28,5 +28,6 @@ public interface FootbookDao {
 	public List<Ville> listVilles();
 	public List<Ville> searchVilles(String ville);
 	public String departementDeLaVille(String ville);
+	public Long getIDJoueurFromUser(String email);
 	public List<Joueur> listJoueurs(String departement);
 }

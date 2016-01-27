@@ -1,5 +1,6 @@
 package com.footbook.app.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -48,12 +49,12 @@ public class FootbookDaoImpl implements FootbookDao {
 		return req.getResultList();
 	}
 
-	/*@Override
+	@Override
 	public Joueur getJoueur(Long idJoueur) {
 		// TODO Auto-generated method stub
 		return em.find(Joueur.class, idJoueur);
 	}
-
+	/*
 	@Override
 	public void supprimerJoueur(Long idJoueur) {
 		// TODO Auto-generated method stub
@@ -116,6 +117,19 @@ public class FootbookDaoImpl implements FootbookDao {
 		Object dep = req.getSingleResult();
 		String s = (String) dep;
 		return s;
+	}
+
+	@Override
+	public Long getIDJoueurFromUser(String email) {
+		// TODO Auto-generated method stub
+		Query req = em.createNativeQuery("select joueur_id from users where email = :email");
+		req.setParameter("email", email);
+		Object joueurID = req.getSingleResult();
+		BigInteger joueurIDBig = (BigInteger) joueurID;
+		System.out.println("voila le joueurID : "+joueurID + " de cette adresse mail  : " +email);
+		long joueurIDLong = joueurIDBig.longValue();
+		System.out.println("voila le joueurID : "+joueurIDLong + " de cette adresse mail  : " +email);
+		return joueurIDLong;
 	}
 
 }

@@ -4,8 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%@ page session="false" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,6 +39,7 @@
 					                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://127.0.0.1:80/img/marvin.jpg);"></canvas>
 					                <div class="avatar">
 					                	<img class="src-image"  src="http://127.0.0.1:80/img/marvin.jpg" style="width:90px;height:90px;"></img>    
+
 					                </div>
 					                <div class="content">
 					                    <p style="color:white;">${joueur.nom} ${joueur.prenom}<br>
