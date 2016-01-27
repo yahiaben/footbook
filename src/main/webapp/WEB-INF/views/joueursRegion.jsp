@@ -36,12 +36,13 @@
 						<c:forEach items="${joueurs}" var="joueur">
 						    <div class="col-sm-3">
 					            <div class="card">
-					                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+					                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://127.0.0.1:80/img/marvin.jpg);"></canvas>
 					                <div class="avatar">
 					                	<img class="src-image"  src="http://localhost:8888/img-footbook/yahia2.png" style="width:90px;height:90px;"></img>    
+
 					                </div>
 					                <div class="content">
-					                    <p>${joueur.nom} ${joueur.prenom}<br>
+					                    <p style="color:white;">${joueur.nom} ${joueur.prenom}<br>
 					                       POSTE DU JOUEUR</p>
 					                    <p><button type="button" class="btn btn-default">Détails</button></p>
 					                </div>
