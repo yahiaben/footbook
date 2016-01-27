@@ -51,7 +51,7 @@
 		            + '" || Id : "'
 		            + code
 					+ '"';
-             window.location.href = "joueurs/" + region;
+             window.location.href = "joueurs/" + region+"/"+code+"?page=0";
 		        //alert(message);
 		    }
 		});

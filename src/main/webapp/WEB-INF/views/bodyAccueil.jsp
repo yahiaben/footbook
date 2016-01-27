@@ -49,6 +49,25 @@
                                             <f:errors path="password" />
                                         </div>
                                         <div class="form-group">
+                                            <div class="checkbox">
+                                                <!--<label class="string optional" for="terms">
+                                               	 	<f:checkbox path="mesChampionnats" value="DH"/>DH
+                                                </label>-->
+                                                <f:select path="mesPostes" class="js-example-basic-multiple form-control" multiple="multiple">
+  													<option value="AG">AG</option>
+  													<option value="AD">AD</option>
+  													<option value="BU">BU</option>
+  													<option value="MG">MG</option>
+  													<option value="MD">MD</option>
+  													<option value="MC">MC</option>
+  													<option value="DG">DG</option>
+  													<option value="DD">DD</option>
+  													<option value="DC">DC</option>
+  													<option value="G">G</option>
+												</f:select>
+												<f:errors path="mesPostes" />
+                                            </div>
+                                        <div class="form-group">
                                             <f:textarea class="form-control input-lg" path="description" placeholder="Description"/>
                                             <f:errors path="description" />
                                         </div>

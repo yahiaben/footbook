@@ -2,6 +2,9 @@ package com.footbook.app.dao;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.footbook.app.entities.Championnat;
 import com.footbook.app.entities.Joueur;
 import com.footbook.app.entities.Role;
@@ -26,4 +29,5 @@ public interface FootbookDao {
 	public List<Ville> searchVilles(String ville);
 	public String departementDeLaVille(String ville);
 	public Long getIDJoueurFromUser(String email);
+	public List<Joueur> listJoueurs(String departement);
 }
