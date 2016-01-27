@@ -28,6 +28,7 @@ import com.footbook.app.repository.JoueurRepository;
 @Controller
 public class AccueilController {
 	
+
 	@Autowired
 	private JoueurMetier jm;
 	
@@ -54,4 +55,5 @@ public class AccueilController {
 
 		return "redirect:/accueil";
 	}
+
 }
