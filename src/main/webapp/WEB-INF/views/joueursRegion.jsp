@@ -38,7 +38,7 @@
 					            <div class="card">
 					                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
 					                <div class="avatar">
-					                	<img class="src-image"  src="http://127.0.0.1:80/img/mohcine.jpg" style="width:90px;height:90px;"></img>    
+					                	<img class="src-image"  src="http://localhost:8888/img-footbook/yahia.jpg" style="width:90px;height:90px;"></img>    
 					                </div>
 					                <div class="content">
 					                    <p>${joueur.nom} ${joueur.prenom}<br>
