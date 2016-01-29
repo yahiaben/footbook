@@ -1,6 +1,7 @@
 package com.footbook.app.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -91,6 +92,7 @@ public class Joueur implements Serializable {
 	public void setMesPostes(Collection<Poste> mesPostes) {
 		this.mesPostes = mesPostes;
 	}
+	
 
 	public User getUser() {
 		return user;
@@ -180,5 +182,19 @@ public class Joueur implements Serializable {
 		this.ville = ville;
 	}
 	
+	
+	public String hasPoste(String poste){
+		if(this.mesPostes.contains(poste)){
+			return "selected";
+		}
+		return "";
+	}
+	
+	public String hasChampionnat(String c){
+		if(this.mesChampionnats.contains(c)){
+			return "selected";
+		}
+		return "";
+	}
 	
 }

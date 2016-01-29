@@ -25,44 +25,47 @@
 	<div class="wrapper">
 		<%@include file="head.jsp" %>
             <section class="main">
-                
-                
-                
-                <div class="container">
-					<div class="row">
-						<h2><u>Les joueurs de la région ${region}</u></h2>
+                <div class="col-lg-12">
+	                <div class="container col-lg-2">
+						<div>
+							<h4>SEXE</h4>
+							
+						</div>
+						
+						<div>
+							<h4>CHAMPIONNATS</h4>
+							
+						</div>
+						
+						<div>
+							<h4>POSTES</h4>
+							
+						</div>
 					</div>
-					<div class="row">
-						<c:forEach items="${joueurs}" var="joueur">
-						    <div class="col-sm-3">
-					            <div class="card">
-					                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://127.0.0.1:80/img/marvin.jpg);"></canvas>
-					                <div class="avatar">
-					                	<img class="src-image"  src="http://127.0.0.1:80/img/marvin.jpg" style="width:90px;height:90px;"></img>    
-
-					                </div>
-					                <div class="content">
-					                    <p style="color:white;">${joueur.nom} ${joueur.prenom}<br>
-					                       POSTE DU JOUEUR</p>
-					                    <p><button type="button" class="btn btn-default">Détails</button></p>
-					                </div>
-					            	</div>
-					        	</div>
-					    	</c:forEach>
-					    </div>
-				</div>
-
-
-               
-				
-       
-			<form method="POST" action="../../upload-picture" enctype="multipart/form-data">
-		        File to upload: <input type="file" name="file"><br /> 
-		        Name: <input type="text" name="name"><br /> <br /> 
-		        <input type="submit" value="Upload"> Press here to upload the file!
-		    </form>
-                
-                
+	                
+	                <div class="container col-lg-10">
+							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
+						<div class="row">
+							<c:forEach items="${joueurs}" var="joueur">
+							    <div class="col-sm-3">
+						            <div class="card">
+						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost/img/bgprofil.jpg);"></canvas>
+						                <div class="avatar">
+						                	<img class="src-image"  src="http://localhost/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
+	
+						                </div>
+						                <div class="content">
+						                    <p style="color:white;">${joueur.nom} ${joueur.prenom}<br>
+						                       POSTE DU JOUEUR</p>
+						                    <p><button type="button" class="btn btn-default">Détails</button></p>
+						                </div>
+						            	</div>
+						        	</div>
+						    	</c:forEach>
+						    </div>
+						</div>
+						
+                	</div>
    	        </section>
     	<%@include file="footer.jsp" %>
     </div>

@@ -41,7 +41,7 @@
                             <div class="col-sm-4 col-md-3 col-lg-2">
                                 <!-- User avatar -->
                                 <div class="profile_avatar">
-                                    <img src="resources/img/yahia2.png" alt="avatar" class="img-responsive">
+                                    <img src="http://localhost/img/${joueur.nomPhoto}" alt="avatar" class="img-responsive">
                                 </div>
                             </div>
                             <div class="col-sm-8 col-md-9 col-lg-10">
@@ -75,59 +75,83 @@
                         <div class="col-md-9 col-sm-9">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> My Profile </a> </h4>
+                                    <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> Mon Profile </a> </h4>
                                 </div>
 
-                                <form accept-charset="utf-8" method="post" enctype="multipart/form-data" id="UserProfileForm" class="form-horizontal">
+                                <form accept-charset="utf-8" method="POST" action="/app/upload-picture" onsubmit="return verifForm(this)" enctype="multipart/form-data" id="UserProfileForm" class="form-horizontal">
                                     <div class="panel-body">            
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Username</label>
+                                            <label class="col-sm-3 control-label">Nom</label>
                                             <div class="col-sm-9">
-                                                <input type="text" required="required" value="author" maxlength="100" class="form-control" readonly >                                  </div>
+                                                <input type="text" name="nom" required="required"  value="${joueur.nom}" class="form-control" >                                   </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Prénom</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="prenom" required="required"  value="${joueur.prenom}" class="form-control" >                                   </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Email</label>
                                             <div class="col-sm-9">
-                                                <input type="email" required="required"  value="example@gmail.com" maxlength="100" class="form-control" readonly >                        
+                                                <input type="email" name="email" required="required"  value="${joueur.email}" maxlength="100" class="form-control" readonly >                        
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">First Name</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" required="required"  value="" class="form-control" >                                   </div>
+                                        	<label class="col-sm-3 control-label">Postes</label>
+                                        	<div class="checkbox col-sm-9">
+                                                <select id="postes" class="js-example-basic-multiple form-control" name="postes" multiple="multiple">
+  													<option value="AG" ${joueur.hasPoste("AG")}>AG</option>
+  													<option value="AD" ${joueur.hasPoste("AD")}>AD</option>
+  													<option value="BU" ${joueur.hasPoste("BU")}>BU</option>
+  													<option value="MG" ${joueur.hasPoste("MG")}>MG</option>
+  													<option value="MD" ${joueur.hasPoste("MD")}>MD</option>
+  													<option value="MC" ${joueur.hasPoste("MC")}>MC</option>
+  													<option value="DG" ${joueur.hasPoste("DG")}>DG</option>
+  													<option value="DD" ${joueur.hasPoste("DD")}>DD</option>
+  													<option value="DC" ${joueur.hasPoste("DC")}>DC</option>
+  													<option value="G" ${joueur.hasPoste("G")}>G</option>
+												</select>
+												<errors  />
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Last Name</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" required="required"  value="" class="form-control" >                                   </div>
+                                        	<label class="col-sm-3 control-label">Championnats</label>
+                                        	<div class="checkbox col-sm-9">
+                                                <select id="postes" class="js-example-basic-multiple form-control" name="championnats" multiple="multiple">
+  													<option value="PH" ${joueur.hasChampionnat("PH")}>PH</option>
+  													<option value="DH" ${joueur.hasChampionnat("DH")}>DH</option>
+												</select>
+												<errors  />
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Phone</label>
+                                            <label class="col-sm-3 control-label">Description</label>
                                             <div class="col-sm-9">
-                                                <input type="tel"  value="" maxlength="100" class="form-control" >                                  </div>
+                                                <input type="text" name="description" required="required"  value="${joueur.description}" maxlength="100" class="form-control" >                        
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Address</label>
+                                            <label class="col-sm-3 control-label">Ville</label>
                                             <div class="col-sm-9">
-                                                <input type="text" value="" class="form-control" >                                 </div>
+                                                <input type="text" name="ville" value="${joueur.ville}" class="form-control" >                                 </div>
                                         </div>
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Avatar</label>
+                                            <label  class="col-sm-3 control-label">Photo</label>
                                             <div class="col-sm-9">
-                                                <input type="file" class="filestyle" >
+                                                <input type="file" name="file" class="filestyle" >
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Password</label>
+                                            <label  class="col-sm-3 control-label">Mot de passe</label>
                                             <div class="col-sm-9">
-                                                <input type="password" class="form-control" placeholder="Left blank if you will not update" value="" >                                         <span class="help-block"></span>
+                                                <input type="password" name="mdp" id="password" class="form-control" placeholder="" value="" >                                         <span class="help-block"></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Confirm Password</label>
+                                            <label  class="col-sm-3 control-label">Confirmation Mot de passe</label>
                                             <div class="col-sm-9">
-                                                <input type="password" class="form-control" >                                           <span class="help-block"></span>
+                                                <input type="password" name="cmdp" id="vpassword" class="form-control" >                                           <span class="help-block"></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -151,8 +175,47 @@
             </section>
     </div>
     <%@include file="footer.jsp" %>
+	<script type="text/javascript">
+		String.prototype.endsWith = function(suffix) {
+			return this.indexOf(suffix, this.length - suffix.length) !== -1;
+		};
+		function upload(){
+			var filename = $("#file").val();
+			if(filename.endsWith(".jpg")){
+				$("#sendUpload").click();
+			}
+			else{
+				alert("Accept only .jpg file !");
+			}
+		}
+		$("#file").on("change",function(){upload();});
+		$("#uploadButton").on("click",function(){$("#file").click()});
+	</script>
+	
+	<script>
+	function verifForm(f)
+	{
+	   var mdp1 = f.mdp;
+	   var cmdp = f.cmdp;
+	   
+	   if(mdp1.value == cmdp.value && (mdp1.value.length > 7 || mdp1.value.length == 0))
+	      return true;
+	   else
+	   {
+		   if(mdp1.value == cmdp.value)
+			 alert("La taille du mot de passe doit etre supérieur à 7 ! ");
+		   else
+	     	 alert("Les mots de passes doivent être identiques ! ");
+	      return false;
+	   }
+	}
+	
+	function alerte(){
+		alert("coucou");
+	}
 	
 	
+    </script>
 	<%@include file="footerScripts.jsp" %>
 </body>
 </html>

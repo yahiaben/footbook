@@ -12,6 +12,7 @@ import com.footbook.app.entities.Joueur;
 import com.footbook.app.entities.Role;
 import com.footbook.app.entities.User;
 import com.footbook.app.entities.Ville;
+import com.footbook.app.entities.Poste;
 
 public class FootbookDaoImpl implements FootbookDao {
 	
@@ -54,6 +55,13 @@ public class FootbookDaoImpl implements FootbookDao {
 		// TODO Auto-generated method stub
 		return em.find(Joueur.class, idJoueur);
 	}
+	
+	@Override
+	public User getUser(Long idUser) {
+		// TODO Auto-generated method stub
+		return em.find(User.class, idUser);
+	}
+	
 	/*
 	@Override
 	public void supprimerJoueur(Long idJoueur) {
@@ -130,6 +138,20 @@ public class FootbookDaoImpl implements FootbookDao {
 		long joueurIDLong = joueurIDBig.longValue();
 		System.out.println("voila le joueurID : "+joueurIDLong + " de cette adresse mail  : " +email);
 		return joueurIDLong;
+	}
+	
+	public List<Poste> postesJoueur(Long idJoueur){
+		Query req = em.createNativeQuery("select poste from Joueur_mesPostes p where Joueur_joueur_id = :id");
+		req.setParameter("id", idJoueur);
+		
+		return req.getResultList();
+	}
+	
+	public List<Championnat> championnatsJoueur(Long idJoueur){
+		Query req = em.createNativeQuery("select championnat from Joueur_mesChampionnats c where Joueur_joueur_id = :id");
+		req.setParameter("id", idJoueur);
+		
+		return req.getResultList();
 	}
 
 }

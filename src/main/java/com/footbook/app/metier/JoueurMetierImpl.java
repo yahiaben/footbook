@@ -9,7 +9,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.footbook.app.dao.FootbookDao;
+import com.footbook.app.entities.Championnat;
 import com.footbook.app.entities.Joueur;
+import com.footbook.app.entities.Poste;
 @Transactional
 public class JoueurMetierImpl implements JoueurMetier {
 
@@ -54,6 +56,17 @@ public class JoueurMetierImpl implements JoueurMetier {
 		// TODO Auto-generated method stub
 		return fbDao.listJoueurs(departement);
 	}
+	
+	@Override
+	public List<Poste> postesJoueur(Long idJoueur) {
+		// TODO Auto-generated method stub
+		return fbDao.postesJoueur(idJoueur);
+	}
 
+	@Override
+	public List<Championnat> championnatsJoueur(Long idJoueur) {
+		// TODO Auto-generated method stub
+		return fbDao.championnatsJoueur(idJoueur);
+	}
 
 }
