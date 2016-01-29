@@ -42,6 +42,7 @@
 							
 						</div>
 					</div>
+<<<<<<< HEAD
 	                
 	                <div class="container col-lg-10">
 							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
