@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +42,51 @@ public class AccueilController {
 	@Autowired
 	private UserMetier um;
 	
+	
+	public ArrayList<String> postesJoueurs(List<Joueur> lj){
+		ArrayList<String> postes;
+		postes = new ArrayList<String>();
+		
+		for(Joueur j : lj){
+			for(Poste p : jm.postesJoueur(j.getIdJoueur())){
+				String poste = p.name();
+				if(!postes.contains(poste))
+					postes.add(poste);
+			}
+		}
+		
+		return postes;
+	}
+	
+	public String listToString(String m, List<Poste> lp){
+		
+		for(Poste p : lp){
+			m+= p.toString();
+		}
+		
+		return m;
+	}
+	
 @RequestMapping("joueurs/{region}/{code}")
 	public String getJoueursRegion(@PathVariable String region, @PathVariable String code, Model model){
+	 	
+	 	
+		List<Joueur> lj = jm.listJoueurs(code);
 		
-		model.addAttribute("joueurs", jm.listJoueurs(code));
+		
+		for(Joueur j : lj){
+			Long id = j.getIdJoueur();
+			
+			List<Poste> lp;
+			lp = jm.postesJoueur(id);
+			j.setMesPostes(lp);
+			
+			List<Championnat> lc;
+			lc = jm.championnatsJoueur(id);
+			j.setMesChampionnats(lc);
+		}
+		
+		model.addAttribute("joueurs", lj);
 		
 		return "joueursRegion";
 	}

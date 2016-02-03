@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>FootBook - ${region}</title>
 	
 
 <spring:url value="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" var="bootstrap" />
@@ -42,7 +42,6 @@
 							
 						</div>
 					</div>
-<<<<<<< HEAD
 	                
 	                <div class="container col-lg-10">
 							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
@@ -56,8 +55,11 @@
 	
 						                </div>
 						                <div class="content">
-						                    <p style="color:white;">${joueur.nom} ${joueur.prenom}<br>
-						                       POSTE DU JOUEUR</p>
+						                    <p style="color:white;" class="${joueur.sexeJoueur} ${joueur.mesChampionnats} ${joueur.mesPostes}">${joueur.nom} ${joueur.prenom} <br/>
+						                       <c:forEach items="${joueur.mesPostes}" var="poste">
+						                       		${poste}
+						                       </c:forEach>
+						                     </p>
 						                    <p><button type="button" class="btn btn-default">Détails</button></p>
 						                </div>
 						            	</div>
@@ -85,7 +87,12 @@
 			}
 			$("#file").on("change",function(){upload();});
 			$("#uploadButton").on("click",function(){$("#file").click()});
-		</script>
+	</script>
+	<script type="text/javascript">
+		
+		
+		
+	</script>
 	
 	<%@include file="footerScripts.jsp" %>
 </body>
