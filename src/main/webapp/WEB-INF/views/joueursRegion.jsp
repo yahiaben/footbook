@@ -36,12 +36,12 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
-                                    	<input type="checkbox" id="masc" value="value" >M </input>
-                                    	<input type="checkbox" id="fem" value="value" >F </input>
-                                        <li><button id="some_id">FEMININ</button></li>
+                                    	<input type="checkbox" id="masc" value="value" checked="checked">M </input>
+                                    	<input type="checkbox" id="fem" value="value" checked="checked">F </input>
+                                        <!--  <li><button id="some_id">FEMININ</button></li>
                                         <li><button id="some_id2">MASCULIN</button></li>
                                         <li><a href="account_create_post.html">Create New Ads</a></li>
-                                        <li><a href="account_profile.html">My Profile</a></li>
+                                        <li><a href="account_profile.html">My Profile</a></li>-->
                                         <li><a href="/app/accueil">Accueil</a></li>
                                         
                                     </ul>
@@ -114,36 +114,36 @@
 	<script type="text/javascript">
     var theButton = document.getElementById('some_id');
     var theButton2 = document.getElementById('some_id2');
-    theButton.onclick = function() { 
-
-    	var elems = document.getElementsByClassName('MASCULIN');  
-    	$('.MASCULIN').css({'visibility': 'hidden', 'display': 'none'});
-    	$('.FEMININ').css({'visibility': 'visible', 'display': 'block'});
-    }
     
-    theButton2.onclick = function() {  
-    	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
-    	$('.FEMININ').css({'visibility': 'hidden', 'display': 'none'});
-    }
+    $(document).ready(function(){
+	    $('#masc').change(function() {
+	    	  if($(this).is(":checked")) {
+	    	    	$('.MASCULIN').css({'display': 'block'});
+	    	    	
+	    	   }
+	    	   else{
+	    		   $('.MASCULIN').css({'display': 'none'});
+	   	    
+	    	   }
+	    	  
+	    	   return;
+	    	   //'unchecked' event code
+	    	});
+	    
+	    $('#fem').change(function() {
+	 	   if($(this).is(":checked")) {
+	 	    	$('.FEMININ').css({'display': 'block'});
+	 	    	
+	 	   }
+	 	   else{
+	 		   $('.FEMININ').css({'display': 'none'});
+		    
+	 	   }
+	 	   return;
+	 	   //'unchecked' event code
+	 	});
+    });
     
-    $('#masc').change(function() {
-    	   if($(this).is(":checked")) {
-    	    	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
-    	    	$('.FEMININ').css({'visibility': 'hidden', 'display': 'none'});
-    	    	return;
-    	   }
- 	    	$('.FEMININ').css({'visibility': 'visible', 'display': 'block'});
-    	   //'unchecked' event code
-    	});
-    
-    $('#fem').change(function() {
- 	   if($(this).is(":checked")) {
- 	    	$('.MASCULIN').css({'visibility': 'hidden', 'display': 'none'});
- 	    	$('.FEMININ').css({'visibility': 'visible', 'display': 'block'});
- 	      	return;
- 	   }
- 	  	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
- 	});
 </script>
 	
 	<%@include file="footerScripts.jsp" %>
