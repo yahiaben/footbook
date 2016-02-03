@@ -47,7 +47,15 @@
 							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
 						<div class="row">
 							<c:forEach items="${joueurs}" var="joueur">
-							    <div class="col-sm-3 ${joueur.sexeJoueur} ${joueur.mesChampionnats} ${joueur.mesPostes}">
+								<% String championnats = ""; %>
+								<% String postes = ""; %>
+								<c:forEach items="${joueur.mesChampionnats}" var="championnat">
+									<c:set var="championnats" value="${championnats} ${championnat}"/>
+								</c:forEach>
+								<c:forEach items="${joueur.mesPostes}" var="poste">
+									<c:set var="postes" value="${postes} ${poste}"/>
+								</c:forEach>
+							    <div class="col-sm-3  ${joueur.sexeJoueur} ${championnats} ${postes}">
 						            <div class="card">
 						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost:8888/img/yahia2.png);"></canvas>
 						                <div class="avatar">
@@ -66,6 +74,8 @@
 						                </div>
 						            	</div>
 						        	</div>
+						        	<c:set var="championnats" value=""/>
+						        	<c:set var="postes" value=""/>
 						    	</c:forEach>
 						    </div>
 						</div>
@@ -103,8 +113,10 @@
     	for(var i = 0; i < elems.length; i++)
     	{
     	console.log("tessssst " + elems.length);
-    	elems[i].remove(); // hidden has to be a string
+    	//elems[i].remove(); // hidden has to be a string
+    	elems[i].style.visibility = "hidden";
     	}
+    	//elems[elems.length-1].remove();
     }
 
 </script>
