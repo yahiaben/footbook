@@ -22,6 +22,10 @@ public class UserMetierImpl implements UserMetier {
 		return fbDao;
 	}
 	
+	public User getUser(Long idUser) {
+		return fbDao.getUser(idUser);
+	}
+	
 	public void setFbDao(FootbookDao fbDao) {
 		this.fbDao = fbDao;
 	}

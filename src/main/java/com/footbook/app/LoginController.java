@@ -81,7 +81,7 @@ public class LoginController {
 			//model.addAttribute("joueur", new Joueur());
 			model.addAttribute("joueurs", jm.listJoueurs());
 			
-			return "login";
+			return "profil";
 		}
 			
 		return "boots";
