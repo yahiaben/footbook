@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
-                                        <li><a href="account_posts.html">My Ads</a></li>
+                                        <li><button id="some_id">Sexe</button></li>
                                         <li><a href="account_create_post.html">Create New Ads</a></li>
                                         <li><a href="account_profile.html">My Profile</a></li>
                                         <li><a href="/app/accueil">Accueil</a></li>
@@ -47,7 +47,7 @@
 							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
 						<div class="row">
 							<c:forEach items="${joueurs}" var="joueur">
-							    <div class="col-sm-3">
+							    <div class="col-sm-3 ${joueur.sexeJoueur} ${joueur.mesChampionnats} ${joueur.mesPostes}">
 						            <div class="card">
 						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost:8888/img/yahia2.png);"></canvas>
 						                <div class="avatar">
@@ -56,7 +56,7 @@
 						                </div>
 						                <div class="content">
 
-						                    <p style="color:white;" class="${joueur.sexeJoueur} ${joueur.mesChampionnats} ${joueur.mesPostes}">${joueur.nom} ${joueur.prenom} <br/>
+						                    <p style="color:white;">${joueur.nom} ${joueur.prenom} <br/>
 						                       <c:forEach items="${joueur.mesPostes}" var="poste">
 						                       		${poste}
 						                       </c:forEach>
@@ -96,10 +96,18 @@
 			$("#uploadButton").on("click",function(){$("#file").click()});
 	</script>
 	<script type="text/javascript">
-		
-		
-		
-	</script>
+    var theButton = document.getElementById('some_id');
+
+    theButton.onclick = function() { 
+    	var elems = document.getElementsByClassName('MASCULIN');   
+    	for(var i = 0; i < elems.length; i++)
+    	{
+    	console.log("tessssst " + elems.length);
+    	elems[i].remove(); // hidden has to be a string
+    	}
+    }
+
+</script>
 	
 	<%@include file="footerScripts.jsp" %>
 </body>
