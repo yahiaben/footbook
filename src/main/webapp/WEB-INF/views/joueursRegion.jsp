@@ -19,6 +19,8 @@
 <link href="${style1}" rel="stylesheet" />
 <spring:url value="/resources/js/scriptJS.js" var="scriptJS" />
 <script src="${scriptJS}"></script>
+<spring:url value="/webjars/jquery/2.1.4/jquery.min.js" var="jquery" />
+<script src="${jquery}"></script>
 </head>
 <body>
 	
@@ -34,10 +36,14 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
-                                        <li><button id="some_id">Sexe</button></li>
+                                    	<input type="checkbox" id="masc" value="value" >M </input>
+                                    	<input type="checkbox" id="fem" value="value" >F </input>
+                                        <li><button id="some_id">FEMININ</button></li>
+                                        <li><button id="some_id2">MASCULIN</button></li>
                                         <li><a href="account_create_post.html">Create New Ads</a></li>
                                         <li><a href="account_profile.html">My Profile</a></li>
                                         <li><a href="/app/accueil">Accueil</a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -97,16 +103,33 @@
 	</script>
 	<script type="text/javascript">
     var theButton = document.getElementById('some_id');
-
+    var theButton2 = document.getElementById('some_id2');
     theButton.onclick = function() { 
-    	var elems = document.getElementsByClassName('MASCULIN');   
-    	for(var i = 0; i < elems.length; i++)
-    	{
-    	console.log("tessssst " + elems.length);
-    	elems[i].remove(); // hidden has to be a string
-    	}
+    	var elems = document.getElementsByClassName('MASCULIN');  
+    	$('.MASCULIN').css({'visibility': 'hidden', 'display': 'none'});
+    	$('.FEMININ').css({'visibility': 'visible', 'display': 'block'});
     }
-
+    theButton2.onclick = function() {  
+    	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
+    	$('.FEMININ').css({'visibility': 'hidden', 'display': 'none'});
+    }
+    $('#masc').change(function() {
+    	   if($(this).is(":checked")) {
+    	    	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
+    	    	$('.FEMININ').css({'visibility': 'hidden', 'display': 'none'});
+    	    	return;
+    	   }
+ 	    	$('.FEMININ').css({'visibility': 'visible', 'display': 'block'});
+    	   //'unchecked' event code
+    	});
+    $('#fem').change(function() {
+ 	   if($(this).is(":checked")) {
+ 	    	$('.MASCULIN').css({'visibility': 'hidden', 'display': 'none'});
+ 	    	$('.FEMININ').css({'visibility': 'visible', 'display': 'block'});
+ 	      	return;
+ 	   }
+ 	  	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
+ 	});
 </script>
 	
 	<%@include file="footerScripts.jsp" %>
