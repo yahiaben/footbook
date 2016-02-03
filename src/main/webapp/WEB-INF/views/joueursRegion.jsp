@@ -19,47 +19,49 @@
 <link href="${style1}" rel="stylesheet" />
 <spring:url value="/resources/js/scriptJS.js" var="scriptJS" />
 <script src="${scriptJS}"></script>
-
 </head>
 <body>
+	
 	<div class="wrapper">
 		<%@include file="head.jsp" %>
-            <section class="main">
-                <div class="col-lg-12">
-	                <div class="container col-lg-2">
-						<div>
-							<h4>SEXE</h4>
-							
-						</div>
-						
-						<div>
-							<h4>CHAMPIONNATS</h4>
-							
-						</div>
-						
-						<div>
-							<h4>POSTES</h4>
-							
-						</div>
-					</div>
-	                
-	                <div class="container col-lg-10">
+
+		<div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3"><br><br>
+                            <div class="widget">
+                                <div class="widget-header">
+                                    <h3>Critères de recherche</h3>
+                                </div>
+                                <div class="widget-body">
+                                    <ul class="author-menus">
+                                        <li><a href="account_posts.html">My Ads</a></li>
+                                        <li><a href="account_create_post.html">Create New Ads</a></li>
+                                        <li><a href="account_profile.html">My Profile</a></li>
+                                        <li><a href="/app/accueil">Accueil</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+
 							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
 						<div class="row">
 							<c:forEach items="${joueurs}" var="joueur">
 							    <div class="col-sm-3">
 						            <div class="card">
-						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost/img/bgprofil.jpg);"></canvas>
+						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost:8888/img/yahia2.png);"></canvas>
 						                <div class="avatar">
-						                	<img class="src-image"  src="http://localhost/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
+						                	<img class="src-image"  src="http://localhost:8888/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
 	
 						                </div>
 						                <div class="content">
+
 						                    <p style="color:white;" class="${joueur.sexeJoueur} ${joueur.mesChampionnats} ${joueur.mesPostes}">${joueur.nom} ${joueur.prenom} <br/>
 						                       <c:forEach items="${joueur.mesPostes}" var="poste">
 						                       		${poste}
 						                       </c:forEach>
 						                     </p>
+
 						                    <p><button type="button" class="btn btn-default">Détails</button></p>
 						                </div>
 						            	</div>
@@ -67,9 +69,14 @@
 						    	</c:forEach>
 						    </div>
 						</div>
-						
-                	</div>
-   	        </section>
+						  
+                    </div>
+                </div>
+                    </div><br>
+
+	                
+                
+	               
     	<%@include file="footer.jsp" %>
     </div>
 	<script type="text/javascript">

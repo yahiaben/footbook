@@ -26,7 +26,7 @@
 
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="new-ads"><a href="account_create_post.html" class="btn btn-ads btn-block">Accueil</a></li>
+                            <li class="new-ads"><a href="/app/accueil" class="btn btn-ads btn-block">Accueil</a></li>
                             <li><a href="signup.html">Deconnexion</a></li>
                             
 

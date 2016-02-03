@@ -138,7 +138,7 @@ public class AccueilController {
 		if (!fileUpload.isEmpty()) {
 			j.setNomPhoto(principal.getName()+".jpg");
 			final String[] ext = fileUpload.getOriginalFilename().split("\\.");
-			final File file = new File("/Users/scof/Sites/img/" + principal.getName()+".jpg");
+			final File file = new File("/Applications/MAMP/htdocs/img/" + principal.getName()+".jpg");
 			try {
 				FileUtils.copyInputStreamToFile(fileUpload.getInputStream(), file);
 			} catch (final IOException e) {
