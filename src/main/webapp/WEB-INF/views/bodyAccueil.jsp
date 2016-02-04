@@ -87,14 +87,36 @@
  											<div class="widget-header">
                                    				<h3>Votre ville</h3>
                                 			</div>
- 											<f:select path="ville" class="js-example-basic-single form-control" >
+<!--  											<f:select path="ville" class="js-example-basic-single form-control"> 
 												<c:forEach items="${villes}" var="ville">
- 													<option value="${ville.ville_nom}">${ville.ville_nom}</option>
- 												</c:forEach>
+ 													<option value="${ville.ville_nom}">${ville.ville_nom}</option> 
+												</c:forEach> 
+											</f:select> -->
+											<f:select id="citySelect"  path="ville" class="form-control">
 											</f:select>
-											<f:errors path="ville" />
+											<input id="city" type="text" />
                                         </div>
-                                        
+                                        <script type="text/javascript">                                    
+                                    	$(document).ready(function() {
+                                    		var $cityInput = $("#city");
+                                    		$cityInput.keypress(function (e) {
+                                    			var ville = $("#city").val();
+                                                 $.ajax({
+                                                    url : '/app/rechercherVille/'+ville,
+                                                    type : 'GET',
+                                                    dataType : 'json',
+                                                    success : function(data, statut){
+                                                    	var $citySelect = $("#citySelect");
+                                                    	$citySelect.find('option').remove().end();
+                                                 	   $.each(data, function(key, value) {
+                                                 		   $citySelect.append('<option>'+value.ville_nom+'</option>');
+                                                 		 });
+                                                    },
+                                                    error : function(data, statut, error){
+                                                    }
+                                                 });
+                                  		})});
+                                        </script>
                                         <div class="form-group">
                                             <div class="checkbox">
                                                 <label class="string optional" for="terms">
