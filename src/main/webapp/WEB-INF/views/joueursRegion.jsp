@@ -36,8 +36,119 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
-                                    	<input type="checkbox" id="masc" value="value" checked="checked">M </input>
-                                    	<input type="checkbox" id="fem" value="value" checked="checked">F </input>
+                                    	<c:set var="homme" value= "false"/>
+                                    	<c:set var="femme" value= "false"/>
+                                    	<c:set var="dh" value= "false"/>
+                                    	<c:set var="ph" value= "false"/>
+                                    	<c:set var="ag" value= "false"/>
+                                    	<c:set var="ad" value= "false"/>
+                                    	<c:set var="bu" value= "false"/>
+                                    	<c:set var="mg" value= "false"/>
+                                    	<c:set var="md" value= "false"/>
+                                    	<c:set var="mc" value= "false"/>
+                                    	<c:set var="dg" value= "false"/>
+                                    	<c:set var="dd" value= "false"/>
+                                    	<c:set var="dc" value= "false"/>
+                                    	<c:set var="g" value= "false"/>
+                                    	
+                                    	<c:forEach items="${joueurs}" var="joueur">
+                                    		<c:if test="${joueur.sexeJoueur == 'MASCULIN'}">
+													<c:set var="homme" value= "true"/>
+											</c:if>
+											<c:if test="${joueur.sexeJoueur == 'FEMININ'}">
+													<c:set var="femme" value= "true"/>
+											</c:if>
+											<c:forEach items="${joueur.mesChampionnats}" var="championnat">
+												<c:if test="${championnat == 'DH'}">
+													<c:set var="dh" value= "true"/>
+												</c:if>
+												<c:if test="${championnat == 'PH'}">
+													<c:set var="ph" value= "true"/>
+												</c:if>
+											</c:forEach>
+										</c:forEach>
+										
+                                    	<c:forEach items="${joueurs}" var="joueur">
+											<c:forEach items="${joueur.mesPostes}" var="poste">
+												<c:if test="${poste == 'AG'}">
+													<c:set var="ag" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'AD'}">
+													<c:set var="ad" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'BU'}">
+													<c:set var="bu" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'MG'}">
+													<c:set var="mg" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'MD'}">
+													<c:set var="md" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'MC'}">
+													<c:set var="mc" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'DG'}">
+													<c:set var="dg" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'DD'}">
+													<c:set var="dd" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'DC'}">
+													<c:set var="dc" value= "true"/>
+												</c:if>
+												<c:if test="${poste == 'G'}">
+													<c:set var="g" value= "true"/>
+												</c:if>
+											</c:forEach>
+										</c:forEach>
+                                    	<p>Sexe</p>
+                                    	<c:if test="${homme}">
+                                    		<input type="checkbox" class="btnChecked" id="MASCULIN" value="value" checked="checked"> Homme </input>
+                                    	</c:if>
+                                    	<c:if test="${femme}">
+                                    	<input type="checkbox" class="btnChecked" id="FEMININ" value="value" checked="checked"> Femme </input>
+                                    	</c:if><br/><br/>
+                                    	
+                                    	<p>Championnats</p>
+                                    	<c:if test="${dh}">
+                                    	<input type="checkbox" class="btnChecked" id="DH" value="value" checked="checked"> DH </input>
+                                    	</c:if>
+                                    	<c:if test="${ph}">
+                                    	<input type="checkbox" class="btnChecked" id="PH" value="value" checked="checked"> PH </input>
+                                    	</c:if><br /><br/>
+                                    	
+                                    	<p>Postes</p>
+                                    	<c:if test="${ag}">
+                                    	<input type="checkbox" class="btnChecked" id="AG" value="value" checked="checked"> AG </input>
+                                    	</c:if>
+                                    	<c:if test="${ad}">
+                                    	<input type="checkbox" class="btnChecked" id="AD" value="value" checked="checked"> AD </input>
+                                    	</c:if>
+                                    	<c:if test="${bu}">
+                                    	<input type="checkbox" class="btnChecked" id="BU" value="value" checked="checked"> BU </input>
+                                    	</c:if>
+                                    	<c:if test="${mg}">
+                                    	<input type="checkbox" class="btnChecked" id="MG" value="value" checked="checked"> MG </input>
+                                    	</c:if>
+                                    	<c:if test="${md}">
+                                    	<input type="checkbox" class="btnChecked" id="MD" value="value" checked="checked"> MD </input>
+                                    	</c:if>
+                                    	<c:if test="${mc}">
+                                    	<input type="checkbox" class="btnChecked" id="MC" value="value" checked="checked"> MC </input>
+                                    	</c:if>
+                                    	<c:if test="${dg}">
+                                    	<input type="checkbox" class="btnChecked" id="DG" value="value" checked="checked"> DG </input>
+                                    	</c:if>
+                                    	<c:if test="${dd}">
+                                    	<input type="checkbox" class="btnChecked" id="DD" value="value" checked="checked"> DD </input>
+                                    	</c:if>
+                                    	<c:if test="${dc}">
+                                    	<input type="checkbox" class="btnChecked" id="DC" value="value" checked="checked"> DC </input>
+                                    	</c:if>
+                                    	<c:if test="${g}">
+                                    	<input type="checkbox" class="btnChecked" id="G" value="value" checked="checked"> G </input>
+                                        </c:if>
                                         <!--  <li><button id="some_id">FEMININ</button></li>
                                         <li><button id="some_id2">MASCULIN</button></li>
                                         <li><a href="account_create_post.html">Create New Ads</a></li>
@@ -112,38 +223,27 @@
 			$("#uploadButton").on("click",function(){$("#file").click()});
 	</script>
 	<script type="text/javascript">
-    var theButton = document.getElementById('some_id');
-    var theButton2 = document.getElementById('some_id2');
-    
-    $(document).ready(function(){
-	    $('#masc').change(function() {
-	    	  if($(this).is(":checked")) {
-	    	    	$('.MASCULIN').css({'display': 'block'});
-	    	    	
-	    	   }
-	    	   else{
-	    		   $('.MASCULIN').css({'display': 'none'});
-	   	    
-	    	   }
-	    	  
-	    	   return;
-	    	   //'unchecked' event code
-	    	});
-	    
-	    $('#fem').change(function() {
-	 	   if($(this).is(":checked")) {
-	 	    	$('.FEMININ').css({'display': 'block'});
-	 	    	
-	 	   }
-	 	   else{
-	 		   $('.FEMININ').css({'display': 'none'});
-		    
-	 	   }
-	 	   return;
-	 	   //'unchecked' event code
-	 	});
-    });
-    
+	
+	$(document).ready(function(){
+		$('.btnChecked').change(function(){
+			$('.btnChecked').each(function(){
+				if($(this).is(":checked")){
+					var id = $(this).attr('id');
+					$("."+id).css({'display': 'block'});
+				}
+			})
+			$('.btnChecked').each(function(){
+				if(!($(this).is(":checked"))){
+					var id = $(this).attr('id');
+					$("."+id).css({'display': 'none'});
+				}
+			})
+			return;
+		})
+	});
+   
+	
+   
 </script>
 	
 	<%@include file="footerScripts.jsp" %>
