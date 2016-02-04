@@ -41,7 +41,7 @@
                             <div class="col-sm-4 col-md-3 col-lg-2">
                                 <!-- User avatar -->
                                 <div class="profile_avatar">
-                                    <img src="http://localhost/img/${joueur.nomPhoto}" alt="avatar" class="img-responsive">
+                                    <img src="http://localhost:8888/img/${joueur.nomPhoto}" alt="avatar" class="img-responsive">
                                 </div>
                             </div>
                             <div class="col-sm-8 col-md-9 col-lg-10">

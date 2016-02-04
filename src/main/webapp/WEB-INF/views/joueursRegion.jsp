@@ -38,12 +38,11 @@
                                     <ul class="author-menus">
                                     	<input type="checkbox" id="masc" value="value" >M </input>
                                     	<input type="checkbox" id="fem" value="value" >F </input>
-                                        <li><button id="some_id">FEMININ</button></li>
-                                        <li><button id="some_id2">MASCULIN</button></li>
+                                        <!--<li><button id="some_id">FEMININ</button></li>
+                                        <li><button id="some_id2">MASCULIN</button></li>-->
                                         <li><a href="account_create_post.html">Create New Ads</a></li>
                                         <li><a href="account_profile.html">My Profile</a></li>
                                         <li><a href="/app/accueil">Accueil</a></li>
-                                        
                                     </ul>
                                 </div>
                             </div>
@@ -67,8 +66,7 @@
 						                       		${poste}
 						                       </c:forEach>
 						                     </p>
-
-						                    <p><button type="button" class="btn btn-default">Détails</button></p>
+						                    <p><a href="/app/profilJoueur/${joueur.idJoueur}" class="btn btn-default">Détails</a></p>
 						                </div>
 						            	</div>
 						        	</div>
@@ -102,7 +100,7 @@
 			$("#uploadButton").on("click",function(){$("#file").click()});
 	</script>
 	<script type="text/javascript">
-    var theButton = document.getElementById('some_id');
+    /*var theButton = document.getElementById('some_id');
     var theButton2 = document.getElementById('some_id2');
     theButton.onclick = function() { 
     	var elems = document.getElementsByClassName('MASCULIN');  
@@ -112,7 +110,7 @@
     theButton2.onclick = function() {  
     	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
     	$('.FEMININ').css({'visibility': 'hidden', 'display': 'none'});
-    }
+    }*/
     $('#masc').change(function() {
     	   if($(this).is(":checked")) {
     	    	$('.MASCULIN').css({'visibility': 'visible', 'display': 'block'});
