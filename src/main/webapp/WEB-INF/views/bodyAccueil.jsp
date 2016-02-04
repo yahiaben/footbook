@@ -24,7 +24,7 @@
                                        <div class="form-group">
                                             <div class="checkbox">
                                                 <label class="string optional" for="terms">
-                                               	 	<f:radiobutton path="sexeJoueur" value="MASCULIN"/>  Mr
+                                               	 	<f:radiobutton path="sexeJoueur" value="MASCULIN" checked="checked"/>  Mr
                                                 </label>
                                                 <label class="string optional" for="terms">
                                                	 	<f:radiobutton path="sexeJoueur" value="FEMININ"/>  Mme
