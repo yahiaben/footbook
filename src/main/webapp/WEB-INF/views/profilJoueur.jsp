@@ -47,13 +47,74 @@
                                     <!-- User name --> 
                                     <h3 class="profile_name">${joueur.nom} ${joueur.prenom} </h3>
                                     <!-- Contact -->
-                                    <a href="index.html" class="btn btn-primary btn-warning btn-sm"><i class="fa fa-sign-out"></i>Contactez</a>
+                                    <a href="#contact" class="btn btn-primary btn-warning btn-sm"><i class="fa fa-sign-out"></i>Contactez</a>
                                 </div> <!-- / .profile__summary -->
                             </div>
                         </div> <!-- / .row -->
                     </div> <!-- / .container -->
                 </div>
                 </section>
+                <section class="main">
+                <div class="container">
+                     <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="widget">
+                                <div class="widget-header">
+                                    <h3>Description</h3>
+                                </div>
+                                <div class="widget-body">
+                                    <address>
+                                        <strong>${joueur.nom} ${joueur.prenom}</strong><br/>
+                                        ${joueur.description}
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="widget" id="contact">
+                                        <div class="widget-header">
+                                            <h3>Envoyer Message</h3>
+                                        </div>
+                                        <div class="widget-body">
+                                        
+                                        <c:url var="urlPost" value="/contacterJoueur"/>
+                                      
+                                            <f:form modelAttribute="envoiMailDto" action="${urlPost}" method="post">
+                                                <div class="row">
+                                                    <div class="col-xs-4">
+                                                        <f:input type="text" path="nom" placeholder="Nom" class="form-control input-lg"/>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <f:input type="text" path="emailEnvoyeur" placeholder="Email" class="form-control input-lg"/>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <f:input type="text" path="objet" placeholder="Objet" class="form-control input-lg"/>
+                                                    </div>
+                                                    <f:input type="text" path="emailReceveur" placeholder="Objet" class="form-control input-lg" value="${joueur.email}" style="display:none;"/>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <f:textarea rows="5" path="contenu" placeholder="Ecrire votre message ici..." class="form-control"></f:textarea>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <button class="btn btn-lg btn-custom pull-right" type="submit">Envoyer</button>
+                                                    </div>
+                                                </div>
+                                            </f:form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 </div>
 
 </body>

@@ -6,6 +6,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,7 @@ import com.footbook.app.metier.RoleMetierImpl;
 import com.footbook.app.metier.UserMetier;
 import com.footbook.app.metier.UserMetierImpl;
 import com.footbook.app.metier.VilleMetier;
+import com.footbook.app.service.MailMail;
 
 @Controller
 public class LoginController {
@@ -59,6 +62,7 @@ public class LoginController {
 		lv.add(v);
 		lv.add(v2);*/
 		model.addAttribute("villes", vm.listVilles());
+
 		return "boots";
 	}
 	
@@ -83,7 +87,6 @@ public class LoginController {
 			
 			return "profil";
 		}
-			
 		return "boots";
 	}
 	

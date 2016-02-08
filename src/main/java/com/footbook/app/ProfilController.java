@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.footbook.app.dto.EnvoiMailDto;
 import com.footbook.app.entities.Championnat;
 import com.footbook.app.entities.Joueur;
 import com.footbook.app.metier.JoueurMetier;
@@ -59,7 +60,7 @@ public class ProfilController {
 		lc = jm.championnatsJoueur(idJoueurLong);
 		j.setMesChampionnats(lc);
 		model.addAttribute("joueur",j);
-		
+		model.addAttribute("envoiMailDto", new EnvoiMailDto());
 		return "profilJoueur";
 	}
 	

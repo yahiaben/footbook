@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/table_footbook"></property>
+		<property name="url" value="jdbc:mysql://localhost:8889/table_footbook"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 	</bean>
@@ -85,5 +85,23 @@
         <property name="maxUploadSize" value="5048576" /> <!-- 5MB -->
         <property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
     </bean>
+    
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="smtp.gmail.com" />
+	<property name="port" value="587" />
+	<property name="username" value="footbook59@gmail.com" />
+	<property name="password" value="59footbook59" />
+		
+	<property name="javaMailProperties">
+	   <props>
+       	      <prop key="mail.smtp.auth">true</prop>
+       	      <prop key="mail.smtp.starttls.enable">true</prop>
+       	   </props>
+	</property>
+</bean>
+	
+<bean id="mailMail" class="com.footbook.app.service.MailMail">
+	<property name="mailSender" ref="mailSender" />
+</bean>
     
 </beans>
