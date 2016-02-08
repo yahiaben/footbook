@@ -172,11 +172,11 @@
 								<c:forEach items="${joueur.mesPostes}" var="poste">
 									<c:set var="postes" value="${postes} ${poste}"/>
 								</c:forEach>
-							    <div class="col-sm-3  ${joueur.sexeJoueur} ${championnats} ${postes}">
+							    <div class="col-sm-3  ${joueur.sexeJoueur} ${championnats} ${postes}" onmouseover="showDetailPlayer(this);" onmouseout="hideDetailPlayer(this);">
 						            <div class="card">
-						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost:8888/img/yahia2.png);"></canvas>
+						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost:/img/defaut.jpg);"></canvas>
 						                <div class="avatar">
-						                	<img class="src-image"  src="http://localhost:8888/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
+						                	<img class="src-image"  src="http://localhost:/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
 	
 						                </div>
 						                <div class="content">
@@ -188,6 +188,12 @@
 						                     </p>
 						                    <p><a href="/app/profilJoueur/${joueur.idJoueur}" class="btn btn-default">Détails</a></p>
 						                </div>
+						            	</div>
+						            	<div class=detailPlayer>
+						            		<div class="avatar">
+						                		<img class="src-image"  src="http://localhost:/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
+											</div>
+						            		${joueur.description}
 						            	</div>
 						        	</div>
 						        	<c:set var="championnats" value=""/>
@@ -206,22 +212,21 @@
     	<%@include file="footer.jsp" %>
     </div>
 	<script type="text/javascript">
-			String.prototype.endsWith = function(suffix) {
-				return this.indexOf(suffix, this.length - suffix.length) !== -1;
-			};
-			function upload(){
-				var filename = $("#file").val();
-				if(filename.endsWith(".jpg")){
-					$("#sendUpload").click();
-				}
-				else{
-					alert("Accept only .jpg file !");
-				}
-			}
-			$("#file").on("change",function(){upload();});
-			$("#uploadButton").on("click",function(){$("#file").click()});
-	</script>
-	<script type="text/javascript">
+	String.prototype.endsWith = function(suffix) {
+		return this.indexOf(suffix, this.length - suffix.length) !== -1;
+	};
+	function upload(){
+		var filename = $("#file").val();
+		if(filename.endsWith(".jpg")){
+			$("#sendUpload").click();
+		}
+		else{
+			alert("Accept only .jpg file !");
+		}
+	}
+	$("#file").on("change",function(){upload();});
+	$("#uploadButton").on("click",function(){$("#file").click()});
+
 	$(document).ready(function(){
 		$('.btnChecked').change(function(){
 			$('.btnChecked').each(function(){
@@ -240,7 +245,12 @@
 		})
 	});
    
-	
+	function showDetailPlayer(div){
+		$(div).find(".detailPlayer").show();
+	}
+	function hideDetailPlayer(div){
+		$(div).find(".detailPlayer").hide();
+	}
 </script>
 	
 	<%@include file="footerScripts.jsp" %>

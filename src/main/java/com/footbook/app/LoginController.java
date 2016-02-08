@@ -68,7 +68,7 @@ public class LoginController {
 		System.out.println(dpt + " departement " + iDto.getNom() + "  " + iDto.getPrenom() + "  " + iDto.getDescription() + "  " + iDto.getEmail());
 		
 		if (!bindingResult.hasErrors()) {
-			Joueur j = new Joueur(iDto.getNom(),iDto.getPrenom(),iDto.getMesPostes(),iDto.getDescription(),iDto.getEmail(),null,"PhotoDefaut",iDto.getMesChampionnats(),iDto.getSexeJoueur(),dpt,iDto.getVille());
+			Joueur j = new Joueur(iDto.getNom(),iDto.getPrenom(),iDto.getMesPostes(),iDto.getDescription(),iDto.getEmail(),null,"profil.jpg",iDto.getMesChampionnats(),iDto.getSexeJoueur(),dpt,iDto.getVille());
 			User u = new User(iDto.getEmail(),iDto.getPassword(),true);
 			jm.ajouterJoueur(j);
 			um.ajouterUser(u);

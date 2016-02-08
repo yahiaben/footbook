@@ -922,3 +922,16 @@ h2.product-title{
 	background-image: white;
 }
 
+.detailPlayer{
+	background: url("../img/imgAccueil.jpg") no-repeat center center / cover  rgba(0, 0, 0, 1);
+	border: 1px solid #000;
+	position: absolute;
+	height: 150px;
+	width: 300px;
+	padding: 5px;
+	display: none;
+	margin: -170px 0px 0px 20px;
+	z-index: 1000;
+	color: inherit;
+}
+
