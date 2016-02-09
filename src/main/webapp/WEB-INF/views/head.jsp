@@ -36,20 +36,20 @@
 					</c:if>
                   
                   	<c:if test="${connecte == 'true'}">
-						<div class="navbar-collapse collapse">
-	                        <ul class="nav navbar-nav navbar-right">
-	                            <li class="dropdown">
-                                    	<a href="/app/profil">
-                                    		<button class="btn btn-block btn-custom">Mon compte</button>
-                                    	</a>
-                                    	<a href="/app/logout">
-                                    		<button class="btn btn-block btn-custom">Deconnexion</button>
-                                    	</a>
-                                  
-	                            </li>
-	
-	                        </ul>
-	                    </div>
+                  		 <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="new-ads">
+								<a href="/app/profil">
+                                 		<button class="btn btn-block btn-custom">Mon compte</button>
+                                 	</a>
+							</li>
+                            <li>
+                            	<a href="/app/logout">
+                               		<button class="btn btn-block btn-custom">Deconnexion</button>
+                               	</a>
+                            </li>
+                        </ul>
+                    </div>
 					</c:if>
 					
                 </div>
