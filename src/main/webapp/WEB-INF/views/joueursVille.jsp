@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>FootBook - ${region}</title>
+<title>FootBook - ${ville}</title>
 	
 
 <spring:url value="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" var="bootstrap" />
@@ -25,69 +25,7 @@
 <body>
 	
 	<div class="wrapper">
-		
-		
-		<header class="navbar navbar-default navbar-fixed-top navbar-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="../../accueil" class="navbar-brand"><span class="logo"><i class=""></i> FootBook</span></a>
-                    </div>	
-					
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-			                   <form id="signin" class="navbar-form navbar-right" action="j_spring_security_check" method="POST">
-			                        <div class="input-group">
-			                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-			                            <input id="email" type="email" class="form-control" name="j_username" value="" placeholder="Email Address">                                        
-			                        </div>
-			
-			                        <div class="input-group">
-			                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-			                            <input id="password" type="password" class="form-control" name="j_password" value="" placeholder="Password">                                        
-			                        </div>
-			
-			                        <div class="form-group">
-                                            <button type="submit" class="btn btn-block btn-custom">Login</button>
-                                    </div>
-			                   </form>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </header>
-            <section class="hero">
-                <div class="container text-center">
-                    <h2 class="hero-title">Trouver votre futur joueur star ici</h2>
-                    <p class="hero-description hidden-xs">Le football c'est simple, c'est footbook</p>
-                    <div class="row hero-search-box">
-                        <form>
-                            <div class="col-md-4 col-sm-4 search-input">
-                                <input type="text" class="form-control input-lg search-first" placeholder="J'ai de la chance...">
-                            </div>
-                            <div class="col-md-4 col-sm-4 search-input">
-                                        <select class="form-control input-lg search-second">
-                                            <option selected="">All Location</option>
-                                            <option>New York</option>
-                                            <option>Washington</option>
-                                            <option>California</option>
-                                        </select>
-                            </div>
-                            <div class="col-md-4 col-sm-4 search-input">
-                                <button class="btn btn-custom btn-block btn-lg"><i class="fa fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-		
+		<%@include file="head.jsp" %>
 
 		<div class="container">
                     <div class="row">
@@ -213,6 +151,7 @@
                                         </c:if>
                                         <!--  <li><button id="some_id">FEMININ</button></li>
                                         <li><button id="some_id2">MASCULIN</button></li>
+>>>>>>> 4ae95a84e3fd75621d04d5f5e460d25cd2666fa0
                                         <li><a href="account_create_post.html">Create New Ads</a></li>
                                         <li><a href="account_profile.html">My Profile</a></li>-->
                                         <li><a href="/app/accueil">Accueil</a></li>
@@ -222,7 +161,7 @@
                         </div>
                         <div class="col-md-9 col-sm-9">
 
-							<h2 class="hero-title">Les joueurs de la région ${region}</h2><br>
+							<h2 class="hero-title">Les joueurs de la ville ${ville}</h2><br>
 						<div class="row">
 							<c:forEach items="${joueurs}" var="joueur">
 								<% String championnats = ""; %>
@@ -254,7 +193,7 @@
 						            		<div class="avatar">
 						                		<img class="src-image"  src="http://localhost:8888/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
 											</div>
-						            		<p style="color:white;"></p>
+						            		<p style="color:white;">Element important</p>
 						            	</div>
 						        	</div>
 						        	<c:set var="championnats" value=""/>

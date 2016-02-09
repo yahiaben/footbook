@@ -1,31 +1,24 @@
 <div class="counter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="item-counter">
-                                <span class="item-icon"><i class="fa fa-database"></i></span>
-                                <div data-refresh-interval="100" data-speed="3000" data-to="7803" data-from="0" class="item-count">7803</div>
+                                <span class="item-icon"><i class="fa"></i></span>
+                                <div data-refresh-interval="100" data-speed="3000" data-to="83" data-from="0" class="item-count">83</div>
                                 <span class="item-info">Inscrit Aujourd'hui</span>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="item-counter">
-                                <span class="item-icon"><i class="fa fa-user-plus"></i></span>
-                                <div data-refresh-interval="50" data-speed="5000" data-to="427" data-from="0" class="item-count">427</div>
-                                <span class="item-info">Sellers</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="item-counter">
-                                <span class="item-icon"><i class="fa fa-map-marker"></i></span>
+                                <span class="item-icon"><i class="fa"></i></span>
                                 <div data-refresh-interval="80" data-speed="5000" data-to="639" data-from="0" class="item-count">639</div>
                                 <span class="item-info">Clubs Partenaire</span>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="item-counter">
-                                <span class="item-icon"><i class="fa fa-users"></i></span>
-                                <div data-refresh-interval="80" data-speed="5000" data-to="1548" data-from="0" class="item-count">1548</div>
+                                <span class="item-icon"><i class="fa"></i></span>
+                                <div data-refresh-interval="80" data-speed="5000" data-to="4890" data-from="0" class="item-count">4890</div>
                                 <span class="item-info">Joueurs Membre</span>
                             </div>
                         </div>

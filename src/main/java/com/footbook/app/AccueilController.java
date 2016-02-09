@@ -154,5 +154,29 @@ public class AccueilController {
 		
 		return "redirect:/profil";
 	}
+	
+	@RequestMapping("joueursVille/")
+	public String getJoueursVille(@RequestParam("ville") String ville, Model model){
+	 	
+	 	
+		List<Joueur> lj = jm.listJoueursVille(ville);
+		
+		
+		for(Joueur j : lj){
+			Long id = j.getIdJoueur();
+			
+			List<Poste> lp;
+			lp = jm.postesJoueur(id);
+			j.setMesPostes(lp);
+			
+			List<Championnat> lc;
+			lc = jm.championnatsJoueur(id);
+			j.setMesChampionnats(lc);
+		}
+		
+		model.addAttribute("joueurs", lj);
+		
+		return "joueursRegion";
+	}
 
 }

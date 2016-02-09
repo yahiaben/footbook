@@ -49,9 +49,8 @@
                                     <!-- User name --> 
                                     <h3 class="profile_name">${joueur.nom} ${joueur.prenom} </h3>
                                     <!-- User status -->
-                                    <p>Hello.. I'am a frontend developer.</p>
                                     <!-- Contact -->
-                                    <a href="index.html" class="btn btn-primary btn-warning btn-sm"><i class="fa fa-sign-out"></i> Sign Out</a>
+                                    <a href="index.html" class="btn btn-primary btn-warning btn-sm"><i class="fa fa-sign-out"></i> Déconnexion </a>
                                 </div> <!-- / .profile__summary -->
                             </div>
                         </div> <!-- / .row -->
@@ -62,12 +61,14 @@
                         <div class="col-md-3 col-sm-3">
                             <div class="widget">
                                 <div class="widget-header">
-                                    <h3>Author Menus</h3>
+                                    <h3>Menu</h3>
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
+
                                         <li><a href="profilJoueur/${joueur.idJoueur}">Mon Profil </a></li>
-                                        <li><a href="index.html">Signout</a></li>
+                                        <li><a href="index.html">Déconnexion</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -162,8 +163,8 @@
                                     <div class="panel-footer">
                                         <div class="row">
                                             <div class="col-sm-offset-3 col-sm-9">
-                                                <button type="submit" class="btn btn-custom"><i class="fa fa-save"></i> Save Update</button>
-                                                <button type="submit" class="btn btn-default"><i class="fa fa-close"></i> Cancel</button>
+                                                <button type="submit" class="btn btn-custom"><i class="fa fa-save"></i> Sauvegarder</button>
+                                                <button type="submit" class="btn btn-default"><i class="fa fa-close"></i> Annuler</button>
                                             </div>
                                         </div>
                                     </div>
