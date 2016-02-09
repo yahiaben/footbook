@@ -21,4 +21,5 @@ public interface JoueurMetier{
 	public List<Joueur> listJoueurs(String departement);
 	public List<Poste> postesJoueur(Long idJoueur);
 	public List<Championnat> championnatsJoueur(Long idJoueur);
+	public List<Joueur> listJoueursVille(String ville);
 }

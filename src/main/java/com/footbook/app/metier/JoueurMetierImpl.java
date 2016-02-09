@@ -68,5 +68,10 @@ public class JoueurMetierImpl implements JoueurMetier {
 		// TODO Auto-generated method stub
 		return fbDao.championnatsJoueur(idJoueur);
 	}
+	@Override
+	public List<Joueur> listJoueursVille(String ville) {
+		// TODO Auto-generated method stub
+		return fbDao.listJoueursVille(ville);
+	}
 
 }

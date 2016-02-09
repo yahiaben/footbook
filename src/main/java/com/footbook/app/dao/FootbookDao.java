@@ -34,4 +34,5 @@ public interface FootbookDao {
 	public List<Joueur> listJoueurs(String departement);
 	public User getUser(Long idUser);
 	public List<Championnat> championnatsJoueur(Long idJoueur);
+	public List<Joueur> listJoueursVille(String ville);
 }

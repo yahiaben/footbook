@@ -121,7 +121,7 @@
                                             <div class="checkbox">
                                                 <label class="string optional" for="terms">
                                                     <input type="checkbox" id="terms" style="">
-                                                    <a href="#">I Agree with Term and Conditions</a>
+                                                    <a href="#">J'accepte les termes et conditions</a>
                                                 </label>
                                             </div>
                                         </div>

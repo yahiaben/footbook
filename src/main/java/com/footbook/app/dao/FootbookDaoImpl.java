@@ -154,4 +154,12 @@ public class FootbookDaoImpl implements FootbookDao {
 		return req.getResultList();
 	}
 
+	@Override
+	public List<Joueur> listJoueursVille(String ville) {
+		// TODO Auto-generated method stub
+		Query req = em.createNativeQuery("select * from joueurs j where ville = :vil",Joueur.class);
+		req.setParameter("vil", ville);
+		return req.getResultList();
+	}
+
 }
