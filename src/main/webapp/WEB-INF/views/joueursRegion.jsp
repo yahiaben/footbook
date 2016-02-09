@@ -193,7 +193,7 @@
 						            		<div class="avatar">
 						                		<img class="src-image"  src="http://localhost:8888/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
 											</div>
-						            		<p style="color:white;">Element important</p>
+						            		<p style="color:white;"></p>
 						            	</div>
 						        	</div>
 						        	<c:set var="championnats" value=""/>

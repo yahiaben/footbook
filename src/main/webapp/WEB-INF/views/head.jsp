@@ -36,7 +36,7 @@
             </header>
             <section class="hero">
                 <div class="container text-center">
-                    <h2 class="hero-title">Trouver votre futur joueur star ici</h2>
+                    <h2 class="hero-title">Trouvez votre futur joueur star ici</h2>
                     <p class="hero-description hidden-xs">Le football c'est simple, c'est footbook</p>
                     <div class="row hero-search-box">
                         <form action="/app/joueursVille/" method="get">
