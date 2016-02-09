@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
-                                        <li><a href="account_profile.html">My Profile</a></li>
+                                        <li><a href="account_profile.html">Mon Profil</a></li>
                                         <li><a href="index.html">Signout</a></li>
                                     </ul>
                                 </div>
@@ -75,7 +75,7 @@
                         <div class="col-md-9 col-sm-9">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> Mon Profile </a> </h4>
+                                    <h4 class="panel-title"> <a href="#collapseB1" data-toggle="collapse"> Mon Profil </a> </h4>
                                 </div>
 
                                 <form accept-charset="utf-8" method="POST" action="/app/upload-picture" onsubmit="return verifForm(this)" enctype="multipart/form-data" id="UserProfileForm" class="form-horizontal">

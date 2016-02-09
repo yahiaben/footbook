@@ -32,7 +32,7 @@
                 </div>
             </header>
             
-            <section class="main no-padding">
+            <section class="no-padding">
                 <div class="account-header">
                     <div class="container">
                         <div class="row">
@@ -53,6 +53,24 @@
                         </div> <!-- / .row -->
                     </div> <!-- / .container -->
                 </div>
+                <div class="container">
+                     <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="widget">
+                                <div class="widget-header">
+                                    <h3>${joueur.nom} ${joueur.prenom}</h3>
+                                </div>
+                                <div class="widget-body">
+                                    <address>
+                                        <strong>Postes : ${joueur.mesPostes}</strong><br/><br/>
+                                        <strong>Championnats : ${joueur.mesChampionnats}</strong><br/><br/>
+                                        <strong>Description : </strong><br/>${joueur.description}<br/>
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
                 </section>
                 <section class="main">
                 <div class="container">
