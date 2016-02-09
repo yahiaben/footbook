@@ -68,7 +68,7 @@ public class AccueilController {
 	}
 	
 @RequestMapping("joueurs/{region}/{code}")
-	public String getJoueursRegion(@PathVariable String region, @PathVariable String code, Model model){
+	public String getJoueursRegion(@PathVariable String region, @PathVariable String code, Model model, Principal principal){
 	 	
 	 	
 		List<Joueur> lj = jm.listJoueurs(code);
@@ -87,7 +87,18 @@ public class AccueilController {
 		}
 		
 		model.addAttribute("joueurs", lj);
+		Long joueurID;
+		try {
+			joueurID = jm.getIDJoueurFromUser(principal.getName());
+		} catch (Exception e) {
+			joueurID = (long) -1;
+		}
 		
+		if(joueurID > 0){
+			model.addAttribute("connecte", "true");
+		}else{
+			model.addAttribute("connecte", "false");
+		}
 		return "joueursRegion";
 	}
 	
@@ -156,7 +167,7 @@ public class AccueilController {
 	}
 	
 	@RequestMapping("joueursVille/")
-	public String getJoueursVille(@RequestParam("ville") String ville, Model model){
+	public String getJoueursVille(@RequestParam("ville") String ville, Model model, Principal principal){
 	 	
 	 	
 		List<Joueur> lj = jm.listJoueursVille(ville);
@@ -176,7 +187,20 @@ public class AccueilController {
 		
 		model.addAttribute("joueurs", lj);
 		
-		return "joueursRegion";
+		Long joueurID;
+		try {
+			joueurID = jm.getIDJoueurFromUser(principal.getName());
+		} catch (Exception e) {
+			joueurID = (long) -1;
+		}
+		
+		if(joueurID > 0){
+			model.addAttribute("connecte", "true");
+		}else{
+			model.addAttribute("connecte", "false");
+		}
+		model.addAttribute("ville", ville);
+		return "joueursVille";
 	}
 
 }
