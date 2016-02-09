@@ -191,9 +191,9 @@
 						            	</div>
 						            	<div class=detailPlayer>
 						            		<div class="avatar">
-						                		<img class="src-image"  src="http://localhost:/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
+						                		<img class="src-image"  src="http://localhost:8888/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    
 											</div>
-						            		${joueur.description}
+						            		<p style="color:white;">Element important</p>
 						            	</div>
 						        	</div>
 						        	<c:set var="championnats" value=""/>
