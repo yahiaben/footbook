@@ -100,7 +100,7 @@ public class LoginController {
 			//model.addAttribute("joueur", new Joueur());
 			model.addAttribute("joueurs", jm.listJoueurs());
 			
-			return "profil";
+			return "redirect:/accueil";
 		}
 		return "boots";
 	}
