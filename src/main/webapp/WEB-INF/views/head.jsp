@@ -7,31 +7,51 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand"><span class="logo"><i class=""></i> FootBook</span></a>
+                        <a href="accueil" class="navbar-brand"><span class="logo"><i class=""></i> FootBook</span></a>
                     </div>	
 					
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-			                   <form id="signin" class="navbar-form navbar-right" action="j_spring_security_check" method="POST">
-			                        <div class="input-group">
-			                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-			                            <input id="email" type="email" class="form-control" name="j_username" value="" placeholder="Email Address">                                        
-			                        </div>
-			
-			                        <div class="input-group">
-			                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-			                            <input id="password" type="password" class="form-control" name="j_password" value="" placeholder="Password">                                        
-			                        </div>
-			
-			                        <div class="form-group">
-                                            <button type="submit" class="btn btn-block btn-custom">Login</button>
-                                    </div>
-			                   </form>
-                            </li>
-
-                        </ul>
-                    </div>
+					<c:if test="${connecte == 'false'}">
+						<div class="navbar-collapse collapse">
+	                        <ul class="nav navbar-nav navbar-right">
+	                            <li class="dropdown">
+				                   <form id="signin" class="navbar-form navbar-right" action="j_spring_security_check" method="POST">
+				                        <div class="input-group">
+				                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+				                            <input id="email" type="email" class="form-control" name="j_username" value="" placeholder="Email Address">                                        
+				                        </div>
+				
+				                        <div class="input-group">
+				                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				                            <input id="password" type="password" class="form-control" name="j_password" value="" placeholder="Password">                                        
+				                        </div>
+				
+				                        <div class="form-group">
+	                                            <button type="submit" class="btn btn-block btn-custom">Login</button>
+	                                    </div>
+				                   </form>
+	                            </li>
+	
+	                        </ul>
+	                    </div>
+					</c:if>
+                  
+                  	<c:if test="${connecte == 'true'}">
+						<div class="navbar-collapse collapse">
+	                        <ul class="nav navbar-nav navbar-right">
+	                            <li class="dropdown">
+                                    	<a href="/app/profil">
+                                    		<button class="btn btn-block btn-custom">Mon compte</button>
+                                    	</a>
+                                    	<a href="/app/logout">
+                                    		<button class="btn btn-block btn-custom">Deconnexion</button>
+                                    	</a>
+                                  
+	                            </li>
+	
+	                        </ul>
+	                    </div>
+					</c:if>
+					
                 </div>
             </header>
             <section class="hero">

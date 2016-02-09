@@ -1,5 +1,6 @@
 package com.footbook.app;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,8 +54,9 @@ public class LoginController {
 		return "login";
 	}
 	
+
 	@RequestMapping("/accueil")
-	public String boots(Model model){
+	public String boots(Principal principal, Model model){
 		model.addAttribute("inscriptionDto", new InscriptionDto());
 		/*Ville v = new Ville("59","Lille");
 		Ville v2 = new Ville("59","Loos");
@@ -62,6 +64,19 @@ public class LoginController {
 		lv.add(v);
 		lv.add(v2);*/
 		model.addAttribute("villes", vm.listVilles());
+		
+		Long joueurID;
+		try {
+			joueurID = jm.getIDJoueurFromUser(principal.getName());
+		} catch (Exception e) {
+			joueurID = (long) -1;
+		}
+		
+		if(joueurID > 0){
+			model.addAttribute("connecte", "true");
+		}else{
+			model.addAttribute("connecte", "false");
+		}
 
 		return "boots";
 	}

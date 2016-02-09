@@ -15,6 +15,14 @@
 		<%@include file="head.jsp" %>
             <section class="main">
                 <%@include file="bodyAccueil.jsp" %>
+                <p> ${connecte}</p>
+                <c:set var="salary" scope="session" value="${2000*2}"/>
+                <c:if test="${connecte == 'true'}">
+  					 <p>test <c:out value="${salary}"/><p>
+				</c:if>
+				<c:if test="${connecte == 'false'}">
+  					 <p>My salary : <c:out value="${salary}"/><p>
+				</c:if>
    	        </section>
     	<%@include file="footer.jsp" %>
     </div>

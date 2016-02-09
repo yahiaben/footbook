@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:8889/table_footbook"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/table_footbook"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 	</bean>
@@ -58,7 +58,7 @@
         password-parameter="j_password"
         login-processing-url="/j_spring_security_check"
 		/>
-		<security:logout logout-success-url="/logout"/>
+		<security:logout logout-success-url="/accueil" logout-url="/logout"/>
 		<security:csrf disabled="true"/>
 		<!-- <security:form-login 
         	login-page="/login" 

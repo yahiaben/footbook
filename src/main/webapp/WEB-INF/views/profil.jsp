@@ -21,13 +21,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand"><span class="logo"><i class="fa"></i> Footbook</span></a>
+                        <a href="accueil" class="navbar-brand"><span class="logo"><i class="fa"></i> Footbook</span></a>
                     </div>
 
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="new-ads"><a href="/app/accueil" class="btn btn-ads btn-block">Accueil</a></li>
-                            <li><a href="signup.html">Deconnexion</a></li>
+                            <li><a href="/app/logout">Deconnexion</a></li>
                             
 
                         </ul>
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="widget-body">
                                     <ul class="author-menus">
-                                        <li><a href="account_profile.html">Mon Profil</a></li>
+                                        <li><a href="profilJoueur/${joueur.idJoueur}">Mon Profil </a></li>
                                         <li><a href="index.html">Signout</a></li>
                                     </ul>
                                 </div>
