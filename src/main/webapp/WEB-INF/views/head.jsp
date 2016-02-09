@@ -14,7 +14,7 @@
 						<div class="navbar-collapse collapse">
 	                        <ul class="nav navbar-nav navbar-right">
 	                            <li class="dropdown">
-				                   <form id="signin" class="navbar-form navbar-right" action="j_spring_security_check" method="POST">
+				                   <form id="signin" class="navbar-form navbar-right" action="/app/j_spring_security_check" method="POST">
 				                        <div class="input-group">
 				                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 				                            <input id="email" type="email" class="form-control" name="j_username" value="" placeholder="Email Address">                                        
@@ -36,20 +36,20 @@
 					</c:if>
                   
                   	<c:if test="${connecte == 'true'}">
-                  		 <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="new-ads">
-								<a href="/app/profil">
-                                 		<button class="btn btn-block btn-custom">Mon compte</button>
-                                 	</a>
-							</li>
-                            <li>
-                            	<a href="/app/logout">
-                               		<button class="btn btn-block btn-custom">Deconnexion</button>
-                               	</a>
-                            </li>
-                        </ul>
-                    </div>
+						<div class="navbar-collapse collapse">
+	                        <ul class="nav navbar-nav navbar-right">
+	                            <li class="">
+									<a href="/app/profil">
+	                                 		<button class="btn btn-block btn-custom">Mon compte</button>
+	                                </a>
+								</li>
+	                            <li class="">
+	                            	<a href="/app/logout">
+	                               		<button class="btn btn-block btn-custom">Deconnexion</button>
+	                               	</a>
+	                            </li>
+	                        </ul>
+	                    </div>
 					</c:if>
 					
                 </div>
