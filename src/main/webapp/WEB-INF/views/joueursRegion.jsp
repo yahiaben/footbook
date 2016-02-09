@@ -65,23 +65,15 @@
             </header>
             <section class="hero">
                 <div class="container text-center">
-                    <h2 class="hero-title">Trouver votre futur joueur star ici</h2>
+                    <h2 class="hero-title">Trouvez votre futur joueur star ici</h2>
                     <p class="hero-description hidden-xs">Le football c'est simple, c'est footbook</p>
                     <div class="row hero-search-box">
-                        <form>
-                            <div class="col-md-4 col-sm-4 search-input">
-                                <input type="text" class="form-control input-lg search-first" placeholder="J'ai de la chance...">
+                        <form action="/app/joueursVille/" method="get">
+                            <div class="col-md-8 col-sm-8 search-input">
+                                <input id="ville" name ="ville" type="text" class="form-control input-lg search-first" placeholder="Entrer une ville...">
                             </div>
                             <div class="col-md-4 col-sm-4 search-input">
-                                        <select class="form-control input-lg search-second">
-                                            <option selected="">All Location</option>
-                                            <option>New York</option>
-                                            <option>Washington</option>
-                                            <option>California</option>
-                                        </select>
-                            </div>
-                            <div class="col-md-4 col-sm-4 search-input">
-                                <button class="btn btn-custom btn-block btn-lg"><i class="fa fa-search"></i></button>
+                                <button class="btn btn-custom btn-block btn-lg">Rechercher</button>
                             </div>
                         </form>
                     </div>
