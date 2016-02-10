@@ -19,6 +19,9 @@ import com.footbook.app.service.MailMail;
 @Controller
 public class MailController {
 
+/**
+ * Méthode pour l'envoie d'un email du recruteur depuis le profil d'un joueur
+ */
 	@RequestMapping(value="/contacterJoueur", method = RequestMethod.POST)
 	public String contacterJoueur(@ModelAttribute("envoiMailDto") @Valid EnvoiMailDto emDto,BindingResult bindingResult, Model model, HttpServletRequest request ){
 		if (!bindingResult.hasErrors()) {

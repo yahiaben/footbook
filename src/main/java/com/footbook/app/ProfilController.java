@@ -26,6 +26,12 @@ public class ProfilController {
 	private List<Poste> lp;
 	private List<Championnat> lc;
 	
+	/**
+	 * Méthode pour recupérer les informations d'un profil
+	 * @param principal : permet de savoir quel joueur est connecté
+	 * @param model permet de transférer les informations a la vue
+	 * @return
+	 */
 	@RequestMapping("/profil")
 	public String login(Principal principal,Model model){
 		Long joueurID = jm.getIDJoueurFromUser(principal.getName());
@@ -50,6 +56,12 @@ public class ProfilController {
 		return "profil";
 	}
 	
+	/**
+	 * Methode pour rediriger vers le profil du joueur 
+	 * @param idJoueur du joueur
+	 * @param model permet de donner les élements a la vue
+	 * @return
+	 */
 	@RequestMapping("/profilJoueur/{idJoueur}")
 	public String voirProfil(@PathVariable String idJoueur, Model model){
 		Long idJoueurLong = Long.parseLong(idJoueur);

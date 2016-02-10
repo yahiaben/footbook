@@ -8,16 +8,34 @@ import com.footbook.app.entities.Role;
 @Transactional
 public class RoleMetierImpl implements RoleMetier {
 
+	/**
+	 * fbDao 
+	 */
 	@Autowired
 	private FootbookDao fbDao;
 	
+	
+	/**
+	 * renvoie la fbDao
+	 * @return la fbao
+	 */
 	public FootbookDao getFbDao() {
 		return fbDao;
 	}
+	
+	/**
+	 * modifie la fbDao
+	 * @param fbDao nouvel fbDao
+	 */
 	public void setFbDao(FootbookDao fbDao) {
 		this.fbDao = fbDao;
 	}
 	
+	/**
+	 * attribue un role a un user
+	 * @param role a attribuer a l'user
+	 * @param Id de l'user
+	 */
 	@Override
 	public void attribuerRole(Role r, Long userID) {
 		// TODO Auto-generated method stub

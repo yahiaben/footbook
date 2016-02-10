@@ -45,6 +45,9 @@ public class LoginController {
 	@Autowired
 	private VilleMetier vm;
 	
+	/*
+	 * methode pour rediriger vers la page d'accueil
+	 */
 	@RequestMapping("/login")
 	public String login(Model model){
 		model.addAttribute("inscriptionDto", new InscriptionDto());
@@ -55,6 +58,12 @@ public class LoginController {
 	}
 	
 
+	/**
+	 * Methode pour revoyer vers l'accueil
+	 * @param principal
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/accueil")
 	public String boots(Principal principal, Model model){
 		model.addAttribute("inscriptionDto", new InscriptionDto());
@@ -81,6 +90,13 @@ public class LoginController {
 		return "boots";
 	}
 	
+	/**
+	 * Methode pour valider l'inscription
+	 * @param iDto class qui regroupe toutes les information du formulaire d'inscription
+	 * @param bindingResult permet de traiter les erreurs
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/saveJoueur", method = RequestMethod.POST)
 	public String saveJoueur(@ModelAttribute("inscriptionDto") @Valid InscriptionDto iDto,BindingResult bindingResult, Model model){
 		String dpt = vm.departementDeLaVille(iDto.getVille());

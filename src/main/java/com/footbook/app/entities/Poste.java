@@ -4,7 +4,10 @@ public enum Poste {
 	BU("BU"),AG("AG"),AD("AD"),MD("MD"),
 	MG("MG"),MOC("MOC"),MDC("MDC"),DD("DD"),
 	DG("DG"),DC("DC"),G("G");
-	
+
+	/**
+	 * permet de renvoyer le poste en string
+	 */
 	public String name = "";
 
 	  Poste(String name){

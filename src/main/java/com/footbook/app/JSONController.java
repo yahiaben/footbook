@@ -18,6 +18,11 @@ public class JSONController {
 	@Autowired
 	private VilleMetier vm; 
 	
+	/**
+	 * Methode pour rechercher les joueur d'une ville
+	 * @param ville
+	 * @return
+	 */
 	@RequestMapping(value = "/rechercherVille/{ville}", method = RequestMethod.GET)
 	public @ResponseBody List<Ville> getVilleEnJSON(@PathVariable String ville){
 		/*System.out.println("Voila la ville " + ville);

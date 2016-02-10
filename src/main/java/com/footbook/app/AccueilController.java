@@ -36,13 +36,23 @@ import com.footbook.app.repository.JoueurRepository;
 public class AccueilController {
 	
 
+	/**
+	 * joueur metier
+	 */
 	@Autowired
 	private JoueurMetier jm;
 	
+	/**
+	 * user metier
+	 */
 	@Autowired
 	private UserMetier um;
 	
-	
+	/**
+	 * Methode pour recupérer les postes des joueurs sous forme d'une liste
+	 * @param lj la liste des joueurs
+	 * @return la liste des postes des joueurs
+	 */
 	public ArrayList<String> postesJoueurs(List<Joueur> lj){
 		ArrayList<String> postes;
 		postes = new ArrayList<String>();
@@ -58,6 +68,12 @@ public class AccueilController {
 		return postes;
 	}
 	
+	/**
+	 * Methode pour transformer une liste en string
+	 * @param m la chaine
+	 * @param lp la liste
+	 * @return la chaine de postes
+	 */
 	public String listToString(String m, List<Poste> lp){
 		
 		for(Poste p : lp){
@@ -67,6 +83,15 @@ public class AccueilController {
 		return m;
 	}
 	
+	
+	/**
+	 * Methodes pour recuppérer les joueur d'une région
+	 * @param region 
+	 * @param code : code postal
+	 * @param model permet de stocker les informations necessaire pour la page
+	 * @param principal permet de savoir qui est connecé
+	 * @return vers la page joueurRegions
+	 */
 @RequestMapping("joueurs/{region}/{code}")
 	public String getJoueursRegion(@PathVariable String region, @PathVariable String code, Model model, Principal principal){
 	 	
@@ -102,6 +127,21 @@ public class AccueilController {
 		return "joueursRegion";
 	}
 	
+
+/**
+ * Méthode pour enregister les informations du profil d'un joueur aprés modification
+ * @param nom du joueur
+ * @param prenom du joueur
+ * @param postes du joueur
+ * @param championnats du joueur
+ * @param description du joueur
+ * @param ville du joueur
+ * @param mdp du joueur
+ * @param fileUpload photo du joueur
+ * @param principal permet de savoir qui est conecter
+ * @param model permet de stocker les informations necessire
+ * @return vers la page du profil
+ */
 	@RequestMapping(value = "/upload-picture", method = RequestMethod.POST)
 	public String uploadPicture(@RequestParam("nom") String nom, @RequestParam("prenom") String prenom,
 			@RequestParam("postes") Collection<String> postes, @RequestParam("championnats") Collection<String> championnats,
@@ -166,6 +206,13 @@ public class AccueilController {
 		return "redirect:/profil";
 	}
 	
+	/**
+	 * Methode pour récupérer les joueurs d'une ville
+	 * @param ville
+	 * @param model
+	 * @param principal
+	 * @return vers la page joueurVille
+	 */
 	@RequestMapping("joueursVille/")
 	public String getJoueursVille(@RequestParam("ville") String ville, Model model, Principal principal){
 	 	

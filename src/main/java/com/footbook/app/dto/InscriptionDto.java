@@ -13,6 +13,13 @@ import com.footbook.app.entities.Sexe;
 
 public class InscriptionDto {
 	
+	/************************************************************************************
+	 ************************************************************************************
+	 * cette classe contient toutes les informations permettant l'inscription du joueur *
+	 * --> le nom, prenom, ville, postes, championnats, email, mot de passe...          *
+	 ************************************************************************************
+	 ************************************************************************************/
+	
 	@NotNull
 	@Size(min=1, max=25, message="Le nom doit être compris entre 1 et 25 caractéres")
 	private String nom;
