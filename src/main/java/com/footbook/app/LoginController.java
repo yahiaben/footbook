@@ -59,7 +59,7 @@ public class LoginController {
 	
 
 	/**
-	 * Methode pour revoyer vers l'accueil
+	 * Methode pour renvoyer vers l'accueil
 	 * @param principal
 	 * @param model
 	 * @return
@@ -92,7 +92,7 @@ public class LoginController {
 	
 	/**
 	 * Methode pour valider l'inscription
-	 * @param iDto class qui regroupe toutes les information du formulaire d'inscription
+	 * @param iDto class qui regroupe toutes les informations du formulaire d'inscription
 	 * @param bindingResult permet de traiter les erreurs
 	 * @param model
 	 * @return

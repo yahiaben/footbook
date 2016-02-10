@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CarteController {
 
 	/**
-	 * Methode pour afficher les d'une région
+	 * Methode pour afficher les joueurs d'une région
 	 * @param region
 	 * @return
 	 */

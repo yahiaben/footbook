@@ -173,7 +173,7 @@
 									<c:set var="postes" value="${postes} ${poste}"/>
 								</c:forEach>
 							    <div class="col-sm-3  ${joueur.sexeJoueur} ${championnats} ${postes}" onmouseover="showDetailPlayer(this);" onmouseout="hideDetailPlayer(this);">
-						            <div class="card">
+						            <div class="card" style="margin-top:15px;">
 						                <canvas class="header-bg" width="250" height="70" id="header-blur" style="background-image:url(http://localhost:8888/img/yahia2.png);"></canvas>
 						                <div class="avatar">
 						                	<img class="src-image"  src="http://localhost:8888/img/${joueur.nomPhoto}" style="width:90px;height:90px;"></img>    

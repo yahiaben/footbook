@@ -7,7 +7,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="accueil" class="navbar-brand"><span class="logo"><i class=""></i> FootBook</span></a>
+                        <a href="accueil" class="navbar-brand"><span class="logo"><img src="http://localhost:8888/img/footbook-logo.png" style="width:70px;height:50px; margin-bottom:15px;"/><i class=""></i> FootBook</span></a>
                     </div>	
 					
 					<c:if test="${connecte == 'false'}">

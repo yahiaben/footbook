@@ -19,7 +19,7 @@ public class JSONController {
 	private VilleMetier vm; 
 	
 	/**
-	 * Methode pour rechercher les joueur d'une ville
+	 * Methode pour rechercher les joueurs d'une ville
 	 * @param ville
 	 * @return
 	 */
